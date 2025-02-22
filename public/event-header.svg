@@ -1,0 +1,13 @@
+<svg width="1434" height="181" viewBox="0 0 1434 181" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M0 5L124.5 13.5L297.5 24.5L30.5 39.5L445 32.5L354 21L780 32.5L445 52.5H958L789.5 42L1180 32.5L1253 52.5L1279 25.5L1434 8V120.5L805.5 146.5L1335 99.5L639.5 121L805.5 129L142 149L600.5 121L112.5 129L0 142V5Z" fill="#EB383F"/>
+<path d="M811 16.5L949.5 0L816.5 27L554 12.5L811 16.5Z" fill="#EB383F"/>
+<path d="M59.9044 156.98L-79 168.008L54.7059 147.086L316.669 168.581L59.9044 156.98Z" fill="#EB383F"/>
+<path d="M632 102.5L1088.5 77C1088.5 77 981.494 78.9029 913.5 86.7755C872.888 91.4776 810 102.5 810 102.5H632Z" fill="url(#pattern0_43_455)"/>
+<path d="M632 102.5L1088.5 77C1088.5 77 981.494 78.9029 913.5 86.7755C872.888 91.4776 810 102.5 810 102.5H632Z" fill="#7F1D1D"/>
+<defs>
+<pattern id="pattern0_43_455" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_43_455" transform="matrix(0.0217391 0 0 0.389173 0 -5.14301)"/>
+</pattern>
+<image id="image0_43_455" width="46" height="29" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAdCAYAAADVV140AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABDSURBVFhH7c6xDQAgEMPAwB4/K6NDwwyWIvkat15n5qbQ/q3jOM1xmuM0x2mO0xynOU5znOY4zXGa4zTHaY7TSseTB3b8AfJQi8W0AAAAAElFTkSuQmCC"/>
+</defs>
+</svg>

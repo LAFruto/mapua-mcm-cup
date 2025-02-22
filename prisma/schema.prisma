@@ -1,0 +1,149 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Activity {
+  id             Int    @id @default(autoincrement())
+  name           String @unique
+  altName        String
+  activityTypeId Int
+  image          String
+  banner         String
+  url            String
+
+  // parentId       Int?
+
+  // PARADE OF FESTIVALS (MR, MS, LIVELIEST DELEGATION, BEST FLOAT, BEST PERFORMANCE)
+
+  // TAWAG NG TANGHALAN (SOLO, DUET)
+  // SINAG MR AND MS (MR, MS, PHOTOGRAPHER, MAKEUP ARTIST, FASHION DESIGNER)
+  // LARO NG LAHI
+  // COSPLAY
+  // BATTLE OF THE BANDS
+  // SPOKEN POETRY
+  // KILLER KARAOKE
+  // MAPUA KALOKALIKE WITH TALENT
+  // INDAK MAPUA
+  // FOLK DANCE COMPE
+
+  // TABLE TENNIS
+  // BADMINTION
+  // VOLLEYBALL
+  // BASKETBALL
+  // CHESS, SCRABBLE
+  // ESPORTS
+
+  startDateTime DateTime @db.Timestamptz(0)
+  endDateTime   DateTime @db.Timestamptz(0)
+
+  isOverall Boolean
+  isScored  Boolean
+
+  activityType ActivityType @relation(fields: [activityTypeId], references: [id])
+
+  // parent   Activity?  @relation(name: "Parent", fields: [parentId], references: [id])
+  // children Activity[] @relation(name: "Parent")
+
+  // @@unique([name, activityTypeId])
+  teams        Team[]
+  participants Participant[]
+  categories   Category[]
+}
+
+model ActivityType {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+
+  // event, sport
+
+  activities Activity[]
+}
+
+model Category {
+  id         Int    @id @default(autoincrement())
+  name       String
+  activityId Int
+
+  activity Activity @relation(fields: [activityId], references: [id])
+
+  @@unique([name, activityId])
+}
+
+model Cluster {
+  id      Int    @id @default(autoincrement())
+  image   String
+  num     Int
+  name    String @unique
+  altName String // KADAYAWAN, MASKARA, ATI-ATIHAN
+  // clusterGroupId Int
+
+  // COLLEGE (CCIS, CHS, CAS, CEA, ATYCB)
+  // SHS (STEM, NON-STEM)
+  // JHS
+  // EMPLOYEE (COLLEGE FACULTY, HS FACULTY, UTILITY, NTP)
+
+  // clusterGroup ClusterGroup @relation(fields: [clusterGroupId], references: [id])
+
+  teams        Team[]
+  participants Participant[]
+}
+
+// model ClusterGroup {
+//   id   Int    @id @default(autoincrement())
+//   name String @unique
+
+//   // COLLEGE, SHS, JHS, EMPLOYEE
+//   clusters Cluster[]
+// }
+
+model Team {
+  id         Int    @id @default(autoincrement())
+  name       String
+  num        Int?
+  activityId Int
+  clusterId  Int
+
+  activity Activity @relation(fields: [activityId], references: [id])
+  cluster  Cluster  @relation(fields: [clusterId], references: [id])
+
+  participants Participant[]
+  tallies      Tally[]
+}
+
+model Participant {
+  id         Int    @id @default(autoincrement())
+  name       String
+  altName    String?
+  activityId Int
+  clusterId  Int
+
+  activity Activity @relation(fields: [activityId], references: [id])
+  teams    Team[]
+  tallies  Tally[]
+
+  cluster Cluster @relation(fields: [clusterId], references: [id])
+}
+
+model Tally {
+  id            Int  @id @default(autoincrement())
+  clusterId     Int
+  activityId    Int
+  teamId        Int?
+  participantId Int?
+  categoryId    Int?
+
+  total Float?
+  score Float?
+  rank  Int
+
+  team        Team?        @relation(fields: [teamId], references: [id])
+  participant Participant? @relation(fields: [participantId], references: [id])
+
+  @@unique([clusterId, activityId, categoryId, participantId])
+}
