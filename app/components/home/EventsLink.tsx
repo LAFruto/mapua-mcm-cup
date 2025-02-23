@@ -13,7 +13,8 @@ const EventsLink = ({ className }: EventsLinkProps) => {
       to="/#events"
       prefetch="viewport"
       className={cn(
-        "flex flex-col justify-between gap-8 border-8 border-white hover:border-red-500 bg-red-900 p-6 group cursor-pointer transition-all",
+        "relative flex flex-col justify-between gap-8 border-8 border-white hover:border-red-500 bg-red-900 p-6 group cursor-pointer transition-all",
+        "before:absolute before:inset-0 before:bg-[url(/bg-container.svg)] before:bg-cover  before:bg-no-repeat before:opacity-15",
         className
       )}
     >

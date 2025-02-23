@@ -3,8 +3,8 @@ import { Image } from "../Image";
 
 const Footer = () => {
   return (
-    <section className="bg-red-700">
-      <div className="max-container padding-container w-full flex gap-8 flex-col lg:flex-row items-center justify-end py-12 ">
+    <section className="bg-red-600">
+      <div className="max-container padding-container w-full flex gap-8 mt-10 flex-col lg:flex-row items-center justify-end pt-24 pb-16">
         <Link
           to="https://api-mmcm.org"
           target="_blank"

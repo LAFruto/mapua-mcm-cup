@@ -59,7 +59,15 @@ export type Score = {
   team: string;
   participant?: string | null; // Allow null as a possible value
   rank?: number | null;
+  medals?: Medal[] | null;
 };
+
+export type Medal = {
+  activity: string;
+  position: Position;
+};
+
+type Position = 1 | 2 | 3;
 
 export type ScoreType = "team" | "participant";
 

@@ -14,7 +14,8 @@ const SportsLink = ({ className }: SportsLinkProps) => {
       to="/#sports"
       prefetch="viewport"
       className={cn(
-        "flex flex-col justify-between gap-8 border-8 border-white hover:border-blue-500 bg-blue-600 h-full p-6 group cursor-pointer transition-all",
+        "relative flex flex-col justify-between gap-8 border-8 border-white hover:border-blue-500 bg-blue-600 h-full p-6 group cursor-pointer transition-all",
+        "before:absolute before:inset-0 before:bg-[url(/bg-container.svg)] before:bg-cover  before:bg-no-repeat before:opacity-15",
         className
       )}
     >
