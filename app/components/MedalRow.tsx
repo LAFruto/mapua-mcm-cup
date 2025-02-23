@@ -43,7 +43,7 @@ const MedalRow = ({ score }: MedalRowProps) => {
           </div>
         </td>
         <td className="md:px-6 py-2">
-          <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex items-center gap-4">
             <div className="relative w-12 h-12 lg:w-16 lg:h-16 rounded-full flex-shrink-0">
               <Image
                 src={score.image || "/placeholder.svg"}
@@ -79,15 +79,20 @@ const MedalRow = ({ score }: MedalRowProps) => {
             {score.medals?.length || 0}
           </p>
         </td>
-        <td className="px-2 py-2">
+        <td className="px-2 md:px-6 py-2">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center justify-center w-10 h-10 bg-red-800 rounded-sm hover:bg-red-700 transition-colors"
+            className={cn(
+              "flex items-center justify-center w-10 h-10 rounded-sm transition-colors",
+              !isOpen
+                ? "bg-red-800 hover:bg-red-700"
+                : "bg-slate-100 border-blue-950 border "
+            )}
             aria-expanded={isOpen}
             aria-controls={`medal-details-${score.team}`}
           >
             {isOpen ? (
-              <MinusIcon className="text-white w-5 h-5" />
+              <MinusIcon className="text-blue-950 w-5 h-5" />
             ) : (
               <PlusIcon className="text-white w-5 h-5" />
             )}
@@ -98,7 +103,7 @@ const MedalRow = ({ score }: MedalRowProps) => {
         <tr className="bg-white border" id={`medal-details-${score.team}`}>
           <td colSpan={7} className="px-4 md:px-8 py-4">
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[640px]">
+              <table className="w-full">
                 <thead>
                   <tr className="border-b border-slate-200">
                     <th className="text-left py-2 px-4 text-sm font-semibold text-slate-600">
@@ -106,9 +111,6 @@ const MedalRow = ({ score }: MedalRowProps) => {
                     </th>
                     <th className="text-left py-2 px-4 text-sm font-semibold text-slate-600">
                       Event
-                    </th>
-                    <th className="text-left py-2 px-4 text-sm font-semibold text-slate-600">
-                      Position
                     </th>
                   </tr>
                 </thead>

@@ -1,10 +1,10 @@
 import EventsLink from "../home/EventsLink";
-import SportsLink from "../home/LeaderboardLink";
+import LeaderboardLink from "../home/LeaderboardLink";
 
 const ActivityLinks = () => {
   return (
     <div className="padding-container max-container grid grid-cols-2 h-full w-full gap-4 my-4">
-      <SportsLink />
+      <LeaderboardLink />
       <EventsLink />
     </div>
   );

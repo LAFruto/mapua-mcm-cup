@@ -48,9 +48,9 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
               </div>
             </div>
           </Link>
-          <div className="text-white z-20 flex gap-2"></div>
+          <div className="text-white z-20 flex"></div>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col pb-12 gap-6">
           <div className="w-full h-[200px] relative  overflow-hidden sm:mb-0">
             <Image
               src={activity.image}
@@ -93,16 +93,6 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
               </div>
             )}
           </div>
-        </div>
-
-        <div className="hidden sm:inline-flex h-[100px] relative  overflow-hidden mt-4 ">
-          {/* <Image
-            src="/hudyaka.svg"
-            height={1024}
-            width={1024}
-            aria-label="API"
-            className="object-contain h-full w-full overflow-hidden"
-          /> */}
         </div>
       </div>
     </section>

@@ -97,10 +97,10 @@ const Events = ({ events }: EventsProps) => {
                       >
                         <div className="h-5  overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className=" uppercase text-white text-base text-nowrap sm:text-base h-5 ">
+                            <p className="flex items-center mt-0.5 text-xs lg:text-base uppercase text-white text-nowrap  h-5">
                               {eventStatus.message}
                             </p>
-                            <p className=" text-white text-base text-nowrap uppercase h-5 ">
+                            <p className="flex items-center text-xs lg:text-base text-white text-nowrap uppercase h-5 ">
                               {eventStatus.message}
                             </p>
                           </div>
@@ -110,10 +110,10 @@ const Events = ({ events }: EventsProps) => {
                       <div className="relative z-10 flex items-center justify-between px-4 lg:px-6 pt-1 pb-1.5 w-full text-white bg-blue-800  md:text-lg truncate text-nowrap font-semibold cursor-pointer group">
                         <div className="h-5  overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className=" text-base text-nowrap uppercase h-5 ">
+                            <p className="flex items-center mt-0.5 text-xs lg:text-base text-nowrap uppercase h-5 ">
                               {eventStatus.message}
                             </p>
-                            <p className=" text-base text-nowrap uppercase h-5 ">
+                            <p className="flex items-center  text-xs lg:text-base text-nowrap uppercase h-5 ">
                               {eventStatus.message}
                             </p>
                           </div>

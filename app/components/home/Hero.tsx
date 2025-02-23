@@ -2,7 +2,7 @@ import { ActivityRecord } from "~/types";
 import { Image } from "../Image";
 import EventsLink from "./EventsLink";
 import HeroCarousel from "./HeroCarousel";
-import SportsLink from "./LeaderboardLink";
+import LeaderboardLink from "./LeaderboardLink";
 
 interface HeroProps {
   activities: ActivityRecord[];
@@ -20,7 +20,7 @@ const Hero = ({ activities }: HeroProps) => {
               <div className="flex-shrink-0 self-center w-40 lg:w-64 h-auto">
                 <Image
                   src="/logo.svg"
-                  alt="Hudyaka logo"
+                  alt="Mapua MCM Cup Logo"
                   width={512}
                   height={512}
                   className="object-contain w-full h-full"
@@ -44,9 +44,8 @@ const Hero = ({ activities }: HeroProps) => {
             </div>
           </div>
 
-          {/* Right Section (Sports & Events) */}
           <div className="grid grid-cols-2 lg:flex flex-col gap-4 flex-grow">
-            <SportsLink className="lg:h-2/5 flex-grow" />
+            <LeaderboardLink className="lg:h-2/5 flex-grow" />
             <EventsLink className="lg:h-3/5 flex-grow" />
           </div>
         </div>

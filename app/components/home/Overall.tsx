@@ -17,7 +17,10 @@ const Overall = ({ scores }: OverallProps) => {
   );
 
   return (
-    <section className="max-container padding-container lg:px-[10%] relative flex flex-col w-full bg-white space-y-6 my-20">
+    <section
+      id="leaderboard"
+      className="max-container padding-container lg:px-[10%] relative flex flex-col w-full bg-white space-y-6 my-20"
+    >
       <Pattern />
       <div className="relative z-4 space-y-6 lg:px-[10%]">
         <div className="relative flex flex-col w-full gap-4 items-center justify-center p-4 bg-red-800 before:absolute before:inset-0 before:bg-[url(/bg-container.svg)] before:bg-cover before:bg-no-repeat before:opacity-30">
@@ -30,7 +33,7 @@ const Overall = ({ scores }: OverallProps) => {
               className={cn(
                 "px-4 rounded-sm transition-colors",
                 leaderboard === "overall"
-                  ? "bg-blue-950 text-white"
+                  ? "bg-blue-950 text-white hover:opacity-95 transition-all duration-300"
                   : "text-blue-950"
               )}
             >
@@ -41,7 +44,7 @@ const Overall = ({ scores }: OverallProps) => {
               className={cn(
                 "px-4 rounded-sm transition-colors",
                 leaderboard === "medals"
-                  ? "bg-blue-950 text-white"
+                  ? "bg-blue-950 text-white hover:opacity-95 transition-all duration-300"
                   : "text-blue-950"
               )}
             >
@@ -74,14 +77,14 @@ const Overall = ({ scores }: OverallProps) => {
             <div className="relative z-4">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-blue-950">
-                    <th className="text-white font-semibold text-left md:px-6 py-2 w-20">
+                  <tr className="bg-blue-950 text-xs md:text-base">
+                    <th className="text-white font-semibold text-left px-3 md:px-6 py-2 w-20">
                       Rank
                     </th>
-                    <th className="text-white font-semibold text-left px-6 py-2">
+                    <th className="text-white font-semibold text-left md:px-6 py-2">
                       School
                     </th>
-                    <th className="text-white font-semibold text-right pr-1 px-6 py-2">
+                    <th className="text-white font-semibold text-right pr-10 px-6 py-2">
                       Score
                     </th>
                   </tr>

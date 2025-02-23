@@ -3,7 +3,6 @@ import { dbk } from "kysely/db";
 import { jsonArrayFrom, jsonObjectFrom } from "kysely/helpers/postgres";
 import { ActivityType, Category, Leaderboard } from "~/types";
 
-// Overall only aggregates event of type "event" not "sports"
 export async function getOverall() {
   const overall = await dbk
     .selectFrom("Cluster as c")

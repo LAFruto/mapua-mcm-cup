@@ -27,7 +27,7 @@ export const meta: MetaFunction = () => {
     },
     {
       property: "og:url",
-      content: "https://hudyaka-mmcm.com",
+      content: "https://mapua-mcm-cup.com",
     },
     {
       property: "og:image",

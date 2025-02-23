@@ -60,17 +60,17 @@ export function ErrorBoundary() {
 
   if (isRouteErrorResponse(error)) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <div className=" h-[250px]">
+      <div className="flex flex-col items-center justify-center min-h-screen gap-10">
+        <div className="h-[250px]">
           <Image
-            src="/hudyaka.svg"
+            src="/logo.svg"
             height={1024}
             width={1024}
             aria-label="API"
             className="object-contain h-full w-full overflow-hidden"
           />
         </div>
-        <div className="text-center p-8 rounded-lg bg-red-800 shadow-md relative z-30">
+        <div className="text-center p-8  bg-red-800 shadow-md relative z-30">
           <p className="text-4xl font-bold text-white mb-4">Error 404</p>
           <a href="/" className="text-white hover:underline">
             Go back to homepage
@@ -84,7 +84,7 @@ export function ErrorBoundary() {
     <div className="flex flex-col items-center justify-center min-h-screen">
       <div className=" h-[250px]">
         <Image
-          src="/hudyaka.svg"
+          src="/logo.svg"
           height={1024}
           width={1024}
           aria-label="API"

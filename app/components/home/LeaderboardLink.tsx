@@ -1,17 +1,15 @@
 import { Link } from "@remix-run/react";
 import { cn } from "~/lib/util";
-import Arrow from "../icons/Arrow";
-import Ball from "../icons/Ball";
 import Medal from "../icons/Medal";
 
-interface SportsLinkProps {
+interface LeaderboardLinkProps {
   className?: string;
 }
 
-const SportsLink = ({ className }: SportsLinkProps) => {
+const LeaderboardLink = ({ className }: LeaderboardLinkProps) => {
   return (
     <Link
-      to="/#sports"
+      to="/#leaderboard"
       prefetch="viewport"
       className={cn(
         "relative flex flex-col justify-between gap-8 border-8 border-white hover:border-blue-500 bg-blue-600 h-full p-6 group cursor-pointer transition-all",
@@ -43,4 +41,4 @@ const SportsLink = ({ className }: SportsLinkProps) => {
   );
 };
 
-export default SportsLink;
+export default LeaderboardLink;
