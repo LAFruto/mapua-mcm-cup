@@ -41,8 +41,6 @@ export async function getOverall() {
 
   const medals = await getMedals();
 
-  console.log("Hello", medals);
-
   for (const o of overall) {
     const teamMedals = medals.filter((m) => m.clusterId === o.id);
     output.categories[0].scores.push({
