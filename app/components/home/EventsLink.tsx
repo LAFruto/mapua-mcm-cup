@@ -13,22 +13,22 @@ const EventsLink = ({ className }: EventsLinkProps) => {
       to="/#events"
       prefetch="viewport"
       className={cn(
-        "relative flex flex-col justify-between gap-8 border-8 border-white hover:border-red-500 bg-red-900 p-6 group cursor-pointer transition-all",
+        "relative flex flex-col justify-between gap-8 border-8 border-white hover:border-red-500 bg-red-900 p-3 md:p-6 group cursor-pointer transition-all",
         "before:absolute before:inset-0 before:bg-[url(/bg-container.svg)] before:bg-cover  before:bg-no-repeat before:opacity-15",
         className
       )}
     >
-      <span className="flex-shrink-0 max-w-[100px] p-3 bg-white">
+      <div className="flex-shrink-0 max-w-[75px] md:max-w-[100px] p-2 bg-white">
         <Festival color="red" />
-      </span>
+      </div>
       <div className="flex text-white items-end justify-between">
         <div className="flex flex-col leading-tight md:gap-2">
           <div className="h-6 overflow-hidden">
             <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-              <p className="font-header uppercase text-sm md:text-xl font-bold h-10">
+              <p className="font-header uppercase text-xs md:text-xl font-bold h-10">
                 Events
               </p>
-              <p className="font-header uppercase md:text-xl font-bold h-10">
+              <p className="font-header uppercase text-xs md:text-xl font-bold h-10">
                 Events
               </p>
             </div>

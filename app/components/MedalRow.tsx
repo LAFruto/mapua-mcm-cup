@@ -30,7 +30,7 @@ const MedalRow = ({ score }: MedalRowProps) => {
   return (
     <>
       <tr className="border-b border-slate-300 bg-slate-100">
-        <td className="items-center justify-center h-full px-4 md:px-6 py-2">
+        <td className="items-center justify-center h-full px-2 md:px-6 py-2">
           <div
             className={cn(
               "w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 aspect-square rounded-full flex items-center justify-center self-center",
@@ -73,13 +73,13 @@ const MedalRow = ({ score }: MedalRowProps) => {
             {score.medals?.filter((m) => m.position === 3).length || 0}
           </p>
         </td>
-        <td className="px-6 py-2 text-right">
-          <p className="bg-white text-sm md:text-xl p-1 md:px-4 tracking-wider font-bold inline-block">
+        <td className="px-3 md:px-6 py-2 text-right">
+          <p className="bg-white text-sm md:text-xl p-0 md:px-4 tracking-wider font-bold inline-block">
             {score.medals?.length || 0}
           </p>
         </td>
         {score.medals && score.medals?.length > 0 ? (
-          <td className="px-2 md:px-6 py-2">
+          <td className="pr-1 md:px-6 py-2">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={cn(

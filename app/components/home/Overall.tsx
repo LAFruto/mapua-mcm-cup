@@ -102,7 +102,7 @@ const Overall = ({ scores }: OverallProps) => {
             <table className="w-full border-collapse">
               <thead>
                 <tr className="bg-blue-950 text-xs md:text-base">
-                  <th className="text-white font-semibold text-left px-3 md:px-6 py-2 w-20">
+                  <th className="text-white font-semibold text-left px-1 md:px-6 py-2 w-20">
                     Rank
                   </th>
                   <th className="text-white font-semibold text-left md:px-6 py-2">
@@ -123,7 +123,7 @@ const Overall = ({ scores }: OverallProps) => {
                       3
                     </span>
                   </th>
-                  <th className="text-white font-semibold text-center lg:text-right px-2 md:px-6 py-2">
+                  <th className="text-white font-semibold text-center lg:text-right px-0 md:px-6 py-2">
                     Total
                   </th>
                   <th className="w-10"></th>

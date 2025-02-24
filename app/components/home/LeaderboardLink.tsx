@@ -12,12 +12,12 @@ const LeaderboardLink = ({ className }: LeaderboardLinkProps) => {
       to="/#leaderboard"
       prefetch="viewport"
       className={cn(
-        "relative flex flex-col justify-between gap-8 border-8 border-white hover:border-blue-500 bg-blue-600 h-full p-6 group cursor-pointer transition-all",
+        "relative flex flex-col justify-between gap-8 border-8 border-white hover:border-blue-500 bg-blue-600 h-full p-3 md:p-6 group cursor-pointer transition-all",
         "before:absolute before:inset-0 before:bg-[url(/bg-container.svg)] before:bg-cover  before:bg-no-repeat before:opacity-15",
         className
       )}
     >
-      <div className="flex-shrink-0 max-w-[100px] p-5  bg-white">
+      <div className="flex-shrink-0 max-w-[75px] md:max-w-[100px] p-2 bg-white">
         <Medal />
       </div>
       <div className="flex text-white items-end justify-between">
@@ -27,7 +27,7 @@ const LeaderboardLink = ({ className }: LeaderboardLinkProps) => {
               <p className="font-header uppercase text-xs md:text-xl font-bold h-10">
                 Leaderboard
               </p>
-              <p className="font-header uppercase md:text-xl font-bold h-10">
+              <p className="font-header uppercase text-xs md:text-xl font-bold h-10">
                 Leaderboard
               </p>
             </div>
