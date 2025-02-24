@@ -17,9 +17,9 @@ const Hero = ({ activities }: HeroProps) => {
           <div className="md:col-span-2 lg:col-span-2 xl:col-span-3 flex flex-col gap-4 flex-grow">
             {/* Logo & Text */}
             <div className="flex justify-center md:h-2/5 gap-6">
-              <div className="flex-shrink-0 self-center w-40 lg:w-64 h-auto">
+              <div className="flex-shrink-0 self-center w-28 lg:w-64 h-auto">
                 <Image
-                  src="/logo4.svg"
+                  src="/logo.png"
                   alt="Mapua MCM Cup Logo"
                   width={512}
                   height={512}
@@ -27,13 +27,13 @@ const Hero = ({ activities }: HeroProps) => {
                 />
               </div>
               <div className="flex flex-col justify-center uppercase text-center">
-                <p className="text-white font-bold text-xl lg:text-4xl">
+                <p className="text-white font-bold text-lg sm:text-xl lg:text-4xl">
                   Bridging
                 </p>
-                <p className="text-white font-bold text-2xl text-nowrap lg:text-4xl xl:text-5xl bg-red-600 px-3 py-1">
+                <p className="text-white font-bold text-xl sm:text-2xl text-nowrap lg:text-4xl xl:text-5xl bg-red-600 px-3 py-1">
                   AI-DRIVEN WORLD
                 </p>
-                <p className="text-white font-bold text-xl lg:text-4xl">
+                <p className="text-white font-bold text-lg sm:text-xl lg:text-4xl">
                   Thru Excellence
                 </p>
               </div>

@@ -51,16 +51,16 @@ const Events = ({ events }: EventsProps) => {
                       <Image src={image} height={1024} width={1024} />
                     </div>
                     {eventStatus.type === "countdown" ? (
-                      <div className="relative z-10 flex justify-center text-center self-center px-2 lg:px-6 py-1 w-full text-blue-800  uppercase border md:text-lg truncate text-nowrap font-semibold cursor-pointer group">
+                      <div className="relative z-10 flex justify-center text-center self-center px-2 lg:px-6 py-1 w-full text-blue-800  border md:text-lg truncate text-nowrap font-semibold cursor-pointer group">
                         <div className="h-5  overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <div className="text-base text-nowrap uppercase h-5 ">
+                            <div className="text-base text-nowrap h-5 ">
                               <CountdownTimer
                                 timeUntilStart={eventStatus.timeUntilStart}
                                 currentTime={currentTime}
                               />
                             </div>
-                            <div className="text-base text-nowrap uppercase h-5 ">
+                            <div className="text-base text-nowrap h-5 ">
                               <CountdownTimer
                                 timeUntilStart={eventStatus.timeUntilStart}
                                 currentTime={currentTime}
@@ -72,15 +72,15 @@ const Events = ({ events }: EventsProps) => {
                     ) : eventStatus.type === "upcoming" ? (
                       <div
                         className={cn(
-                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 pt-1 pb-1.5 w-full border  md:text-lg truncate text-nowrap font-semibold cursor-pointer group"
+                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 pt-1 lg:pt-0.5 pb-1.5 w-full border  md:text-lg truncate text-nowrap font-semibold cursor-pointer group"
                         )}
                       >
                         <div className="h-5 overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className="text-blue-800  text-base text-nowrap uppercase h-5 ">
+                            <p className="text-blue-800  text-base text-nowrap h-5 ">
                               {eventStatus.message}
                             </p>
-                            <p className="text-blue-800  text-base text-nowrap uppercase h-5 ">
+                            <p className="text-blue-800  text-base text-nowrap h-5 ">
                               {eventStatus.message}
                             </p>
                           </div>
@@ -89,31 +89,31 @@ const Events = ({ events }: EventsProps) => {
                     ) : eventStatus.type === "ongoing" ? (
                       <div
                         className={cn(
-                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 pt-1 pb-1.5 w-full border  md:text-lg truncate text-nowrap font-semibold cursor-pointer group",
+                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 pt-1 lg:pt-0.5 pb-1.5 w-full border  md:text-lg truncate text-nowrap font-semibold cursor-pointer group",
                           eventStatus.type == "ongoing"
                             ? "ongoing "
                             : "text-blue-800  uppercase"
                         )}
                       >
-                        <div className="h-5  overflow-hidden mr-2">
+                        <div className="h-5 overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className="flex items-center mt-0.5 text-xs lg:text-base uppercase text-white text-nowrap  h-5">
+                            <p className="flex items-center mt-0.5 text-xs lg:text-base text-white text-nowrap  h-5">
                               {eventStatus.message}
                             </p>
-                            <p className="flex items-center text-xs lg:text-base text-white text-nowrap uppercase h-5 ">
+                            <p className="flex items-center text-xs lg:text-base text-white text-nowrap h-5 ">
                               {eventStatus.message}
                             </p>
                           </div>
                         </div>
                       </div>
                     ) : (
-                      <div className="relative z-10 flex items-center justify-between px-4 lg:px-6 pt-1 pb-1.5 w-full text-white bg-blue-800  md:text-lg truncate text-nowrap font-semibold cursor-pointer group">
+                      <div className="relative z-10 flex items-center justify-between px-2 lg:px-6 pt-1 lg:pt-0.5 pb-1.5 w-full text-white bg-blue-800  md:text-lg truncate text-nowrap font-semibold cursor-pointer group">
                         <div className="h-5  overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className="flex items-center mt-0.5 text-xs lg:text-base text-nowrap uppercase h-5 ">
+                            <p className="flex items-center mt-0.5 text-xs lg:text-base text-nowrap h-5 ">
                               {eventStatus.message}
                             </p>
-                            <p className="flex items-center  text-xs lg:text-base text-nowrap uppercase h-5 ">
+                            <p className="flex items-center  text-xs lg:text-base text-nowrap h-5 ">
                               {eventStatus.message}
                             </p>
                           </div>

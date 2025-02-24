@@ -24,7 +24,7 @@ const LeaderboardLink = ({ className }: LeaderboardLinkProps) => {
         <div className="flex flex-col leading-tight md:gap-2">
           <div className="h-6 overflow-hidden">
             <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-              <p className="font-header uppercase text-sm md:text-xl font-bold h-10">
+              <p className="font-header uppercase text-xs md:text-xl font-bold h-10">
                 Leaderboard
               </p>
               <p className="font-header uppercase md:text-xl font-bold h-10">
