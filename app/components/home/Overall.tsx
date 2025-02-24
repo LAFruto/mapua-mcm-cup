@@ -1,8 +1,10 @@
+"use client";
+
 import { cn, getLeaderboardLayout } from "~/lib/util";
 import type { Score } from "~/types";
 import ScoreMedal from "./ScoreMedal";
 import Pattern from "../ui/Pattern";
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import MedalRow from "../MedalRow";
 import ScoreRow from "../ScoreRow";
 
@@ -10,11 +12,32 @@ interface OverallProps {
   scores: Score[];
 }
 
+const ITEMS_PER_PAGE = 15;
+
 const Overall = ({ scores }: OverallProps) => {
   const [podiumTeams, listTeams] = getLeaderboardLayout(scores);
   const [leaderboard, setLeaderboard] = useState<"overall" | "medals">(
     "overall"
   );
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const paginatedTeams = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const pageTeams = listTeams.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+    const emptyInstances = Array(ITEMS_PER_PAGE - pageTeams.length).fill(null);
+    return [...pageTeams, ...emptyInstances];
+  }, [listTeams, currentPage]);
+
+  const totalPages = Math.ceil(listTeams.length / ITEMS_PER_PAGE);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [leaderboard]);
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+  };
 
   return (
     <section
@@ -22,7 +45,7 @@ const Overall = ({ scores }: OverallProps) => {
       className="max-container padding-container lg:px-[10%] relative flex flex-col w-full bg-white space-y-6 my-20"
     >
       <Pattern />
-      <div className="relative z-4 space-y-6 lg:px-[10%]">
+      <div className="relative z-4 space-y-3 lg:px-[10%]">
         <div className="relative flex flex-col w-full gap-4 items-center justify-center p-4 bg-red-800 before:absolute before:inset-0 before:bg-[url(/bg-container.svg)] before:bg-cover before:bg-no-repeat before:opacity-30">
           <p className="text-2xl lg:text-4xl font-semibold text-white text-center font-header uppercase">
             Leaderboard
@@ -90,19 +113,33 @@ const Overall = ({ scores }: OverallProps) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {[...listTeams].map((score, index) => (
-                    <ScoreRow key={index} score={score} />
-                  ))}
+                  {paginatedTeams.map((score, index) =>
+                    score ? (
+                      <ScoreRow key={index} score={score} />
+                    ) : (
+                      <tr className="border-b border-slate-300 bg-slate-100">
+                        <td
+                          colSpan={7}
+                          className="h-[65px] md:h-[81px] border-b border-gray-200"
+                        ></td>
+                      </tr>
+                    )
+                  )}
                 </tbody>
               </table>
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
             </div>
           </>
         ) : (
           <div className="relative z-4">
-            <table className="w-full border-collapse">
+            <table className="w-full border-collapse bg-slate-100">
               <thead>
                 <tr className="bg-blue-950 text-xs md:text-base">
-                  <th className="text-white font-semibold text-left px-1 md:px-6 py-2 w-20">
+                  <th className="text-white font-semibold text-left px-1 pl-2 md:px-6 py-2 w-20">
                     Rank
                   </th>
                   <th className="text-white font-semibold text-left md:px-6 py-2">
@@ -130,15 +167,63 @@ const Overall = ({ scores }: OverallProps) => {
                 </tr>
               </thead>
               <tbody>
-                {[...podiumTeams, ...listTeams].map((score, index) => (
-                  <MedalRow key={index} score={score} />
-                ))}
+                {[...podiumTeams, ...paginatedTeams].map((score, index) =>
+                  score ? (
+                    <MedalRow key={index} score={score} />
+                  ) : (
+                    <tr className="border-b border-slate-300 bg-slate-100">
+                      <td
+                        colSpan={7}
+                        className="h-[65px] md:h-[81px] border-b border-gray-200"
+                      ></td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
           </div>
         )}
       </div>
     </section>
+  );
+};
+
+interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
+
+const Pagination = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: PaginationProps) => {
+  return (
+    <div className="flex items-center justify-center space-x-2 mt-4 gap-4 font-semibold">
+      <button
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+        className="p-2 rounded-md bg-blue-950 text-white disabled:opacity-50"
+      >
+        Back
+      </button>
+      <span className="text-sm font-medium">
+        Page {currentPage} of {totalPages}
+      </span>
+      <button
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+        className="p-2 rounded-md bg-blue-950 text-white disabled:opacity-50"
+      >
+        Next
+      </button>
+    </div>
   );
 };
 

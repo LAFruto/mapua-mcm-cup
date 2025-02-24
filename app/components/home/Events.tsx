@@ -75,15 +75,15 @@ const Events = ({ events }: EventsProps) => {
                     ) : eventStatus.type === "upcoming" ? (
                       <div
                         className={cn(
-                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 pt-1 lg:pt-0.5 pb-1.5 w-full border  md:text-lg truncate text-nowrap font-semibold border-slate-300 cursor-pointer group"
+                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 lg:pt-0.5 pb-2 w-full border  md:text-lg truncate text-nowrap font-semibold border-slate-300 cursor-pointer group"
                         )}
                       >
                         <div className="h-5 overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className="text-blue-800  text-base text-nowrap h-5 ">
+                            <p className="text-blue-800  text-base text-nowrap h-8">
                               {eventStatus.message}
                             </p>
-                            <p className="text-blue-800  text-base text-nowrap h-5 ">
+                            <p className="text-blue-800  text-base text-nowrap h-8">
                               {eventStatus.message}
                             </p>
                           </div>
@@ -92,7 +92,7 @@ const Events = ({ events }: EventsProps) => {
                     ) : eventStatus.type === "ongoing" ? (
                       <div
                         className={cn(
-                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 pt-1 lg:pt-0.5 pb-1.5 w-full border  md:text-lg truncate text-nowrap font-semibold cursor-pointer group",
+                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6  lg:pt-0.5 pb-2 w-full border  md:text-lg truncate text-nowrap font-semibold cursor-pointer group",
                           eventStatus.type == "ongoing"
                             ? "ongoing "
                             : "text-blue-800 uppercase"
@@ -100,28 +100,28 @@ const Events = ({ events }: EventsProps) => {
                       >
                         <div className="h-5 overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className="flex items-center mt-0.5 text-xs lg:text-base text-white text-nowrap  h-5">
+                            <p className="flex items-center mt-0.5 text-xs lg:text-base text-white text-nowrap h-8">
                               {eventStatus.message}
                             </p>
-                            <p className="flex items-center text-xs lg:text-base text-white text-nowrap h-5 ">
+                            <p className="flex items-center text-xs lg:text-base text-white text-nowrap h-8">
                               {eventStatus.message}
                             </p>
                           </div>
                         </div>
                       </div>
                     ) : (
-                      <div className="relative z-10 flex items-center justify-between px-2 lg:px-6 pt-1 lg:pt-0.5 pb-1.5 w-full text-white bg-blue-800  md:text-lg truncate text-nowrap font-semibold cursor-pointer group">
+                      <div className="relative z-10 flex items-center justify-between px-2 lg:px-6  lg:pt-0.5 pb-2 w-full text-white bg-blue-800  md:text-lg truncate text-nowrap font-semibold cursor-pointer group">
                         <div className="h-5  overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className="flex items-center mt-0.5 text-xs lg:text-base text-nowrap h-5 ">
+                            <p className="flex items-center mt-0.5 text-xs lg:text-base text-nowrap h-8">
                               {eventStatus.message}
                             </p>
-                            <p className="flex items-center  text-xs lg:text-base text-nowrap h-5 ">
+                            <p className="flex items-center  text-xs lg:text-base text-nowrap h-8">
                               {eventStatus.message}
                             </p>
                           </div>
                         </div>
-                        <div className="pt-1 flex w-4 h-5  group-hover:translate-x-1 transform transition-transform duration-300 ease-in-out">
+                        <div className=" flex w-4 h-5  group-hover:translate-x-1 transform transition-transform duration-300 ease-in-out">
                           <Arrow />
                         </div>
                       </div>
