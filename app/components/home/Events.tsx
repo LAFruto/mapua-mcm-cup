@@ -3,9 +3,7 @@ import { useCurrentTime } from "~/hooks/useCurrentTime";
 import { cn, getEventStatus } from "~/lib/util";
 import { ActivityRecord } from "../../types";
 import { CountdownTimer } from "../CountdownTimer";
-import HoverMedal from "../HoverMedal";
 import Arrow from "../icons/Arrow";
-import Festival from "../icons/Festival";
 import { Image } from "../Image";
 interface EventsProps {
   events: ActivityRecord[];
@@ -47,8 +45,13 @@ const Events = ({ events }: EventsProps) => {
                       className="absolute inset-0 bg-cover bg-no-repeat opacity-100 z-0"
                       style={{ backgroundImage: "url(/bg-container.svg)" }}
                     />
-                    <div className="relative z-10 mt-6">
-                      <Image src={image} height={1024} width={1024} />
+                    <div className="relative z-10 h-full aspect-auto self-center flex items-center justify-center ">
+                      <Image
+                        src={image}
+                        height={1024}
+                        width={1024}
+                        className="self-center"
+                      />
                     </div>
                     {eventStatus.type === "countdown" ? (
                       <div className="relative z-10 flex justify-center text-center self-center px-2 lg:px-6 py-1 w-full text-blue-800  border md:text-lg truncate text-nowrap font-semibold cursor-pointer group">
@@ -72,7 +75,7 @@ const Events = ({ events }: EventsProps) => {
                     ) : eventStatus.type === "upcoming" ? (
                       <div
                         className={cn(
-                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 pt-1 lg:pt-0.5 pb-1.5 w-full border  md:text-lg truncate text-nowrap font-semibold cursor-pointer group"
+                          "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 pt-1 lg:pt-0.5 pb-1.5 w-full border  md:text-lg truncate text-nowrap font-semibold border-slate-300 cursor-pointer group"
                         )}
                       >
                         <div className="h-5 overflow-hidden mr-2">
@@ -92,7 +95,7 @@ const Events = ({ events }: EventsProps) => {
                           "relative z-10 flex justify-center text-center self-center px-2 lg:px-6 pt-1 lg:pt-0.5 pb-1.5 w-full border  md:text-lg truncate text-nowrap font-semibold cursor-pointer group",
                           eventStatus.type == "ongoing"
                             ? "ongoing "
-                            : "text-blue-800  uppercase"
+                            : "text-blue-800 uppercase"
                         )}
                       >
                         <div className="h-5 overflow-hidden mr-2">
@@ -118,7 +121,7 @@ const Events = ({ events }: EventsProps) => {
                             </p>
                           </div>
                         </div>
-                        <div className="flex w-4 h-5  group-hover:translate-x-2 transform transition-transform duration-300 ease-in-out">
+                        <div className="pt-1 flex w-4 h-5  group-hover:translate-x-1 transform transition-transform duration-300 ease-in-out">
                           <Arrow />
                         </div>
                       </div>

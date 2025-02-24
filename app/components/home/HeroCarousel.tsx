@@ -60,11 +60,15 @@ const HeroCarousel = ({ activities }: HeroCarouselProps) => {
   const countdown = eventWithStatus.filter(
     (item) => item.status.type === "countdown"
   );
+
+  const upcoming = eventWithStatus.filter(
+    (item) => item.status.type === "upcoming"
+  );
   const finished = eventWithStatus
     .filter((item) => item.status.type === "finished")
     .slice(-2);
 
-  const HERO_CAROUSEL = [...ongoing, ...countdown, ...finished];
+  const HERO_CAROUSEL = [...upcoming, ...ongoing, ...countdown, ...finished];
 
   return (
     <div className="relative overflow-hidden h-full">
@@ -77,7 +81,7 @@ const HeroCarousel = ({ activities }: HeroCarouselProps) => {
                 className="relative flex-[0_0_100%] min-w-0 h-full overflow-hidden border-8 border-white hover:border-blue-800 group transition-all"
                 key={index}
               >
-                <div className="font-header uppercase text-lg md:text-xl relative text-white select-none h-full overflow-hidden">
+                <div className="font-header uppercase text-nowrap text-lg md:text-xl relative text-white select-none h-full overflow-hidden">
                   <Image
                     src={event.banner}
                     height={1024}
@@ -111,10 +115,10 @@ const HeroCarousel = ({ activities }: HeroCarouselProps) => {
                           <div className="mt-2 inline-flex w-full justify-center rounded-lg items-center gap-2 text-white lg:px-4 py-1.5">
                             <div className="h-7 overflow-hidden mr-2">
                               <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                                <p className="font-header uppercase text-lg md:text-xl font-bold leading-4 md:leading-9 ">
+                                <p className="font-header uppercase text-nowrap text-lg md:text-xl font-bold leading-4 md:leading-9 ">
                                   {status.message}
                                 </p>
-                                <p className="font-header uppercase text-lg md:text-xl font-bold md:leading-10 py-2">
+                                <p className="font-header uppercase text-nowrap text-lg md:text-xl font-bold md:leading-10 py-2">
                                   {status.message}
                                 </p>
                               </div>
@@ -124,14 +128,14 @@ const HeroCarousel = ({ activities }: HeroCarouselProps) => {
                           <div className="mt-2 inline-flex w-full justify-center rounded-lg items-center gap-2 text-white lg:px-4 py-1.5">
                             <div className="h-8 overflow-hidden mr-2">
                               <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                                <div className="font-header uppercase text-lg md:text-xl font-bold ">
+                                <div className="font-header uppercase text-nowrap text-lg md:text-xl font-bold ">
                                   <CountdownTimer
                                     timeUntilStart={status.timeUntilStart}
                                     currentTime={currentTime}
                                     className="leading-4 md:leading-9"
                                   />
                                 </div>
-                                <div className="font-header uppercase text-lg md:text-xl font-bold ">
+                                <div className="font-header uppercase text-nowrap text-lg md:text-xl font-bold ">
                                   <CountdownTimer
                                     timeUntilStart={status.timeUntilStart}
                                     currentTime={currentTime}
@@ -145,10 +149,10 @@ const HeroCarousel = ({ activities }: HeroCarouselProps) => {
                           <div className="mt-2 inline-flex w-full justify-center rounded-lg items-center gap-2 text-white lg:px-4 py-1.5">
                             <div className="h-7 overflow-hidden mr-2">
                               <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                                <p className="font-header uppercase text-lg md:text-xl font-bold">
+                                <p className="font-header uppercase text-nowrap text-lg md:text-xl font-bold">
                                   View Results
                                 </p>
-                                <p className="font-header uppercase text-lg md:text-xl font-bold">
+                                <p className="font-header uppercase text-nowrap text-lg md:text-xl font-bold">
                                   View Results
                                 </p>
                               </div>

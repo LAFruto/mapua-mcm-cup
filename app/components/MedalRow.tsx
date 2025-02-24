@@ -74,7 +74,7 @@ const MedalRow = ({ score }: MedalRowProps) => {
           </p>
         </td>
         <td className="px-3 md:px-6 py-2 text-right">
-          <p className="bg-white text-sm md:text-xl p-0 md:px-4 tracking-wider font-bold inline-block">
+          <p className="bg-white text-sm md:text-xl px-2 md:px-4 tracking-wider font-bold inline-block">
             {score.medals?.length || 0}
           </p>
         </td>

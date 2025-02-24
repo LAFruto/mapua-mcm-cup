@@ -4,11 +4,11 @@ const activities = [
   // 2/26
 
   {
-    name: "Cheerdance",
+    name: "Cheer-Off",
     type: "event",
-    image: "/activities/cheerdance.png",
-    banner: "/banner/cheerdance.png",
-    url: "/a/cheerdance",
+    image: "/activities/cheer-off.png",
+    banner: "/banner/cheer-off.png",
+    url: "/a/cheer-off",
     startDate: new Date(new Date("02/26/25").setHours(9, 0, 0, 0)),
     endDate: new Date(new Date("02/26/25").setHours(12, 0, 0, 0)),
     isOverall: true,
@@ -79,8 +79,8 @@ const activities = [
     url: "/a/square-off-math-quiz",
     startDate: new Date(new Date("02/27/25").setHours(8, 0, 0, 0)),
     endDate: new Date(new Date("02/27/25").setHours(12, 0, 0, 0)),
-    isOverall: false,
-    isScored: true,
+    isOverall: true,
+    isScored: false,
   },
   {
     name: "Speak Up - Impromptu Speech",
@@ -91,29 +91,29 @@ const activities = [
     startDate: new Date(new Date("02/27/25").setHours(13, 0, 0, 0)),
     endDate: new Date(new Date("02/27/25").setHours(15, 0, 0, 0)),
     isOverall: true,
-    isScored: true,
+    isScored: false,
   },
   {
-    name: "Sci Meet: Science Quiz Show",
+    name: "Sci Meet",
     type: "event",
-    image: "/activities/science-quiz-show.png",
-    banner: "/banner/science-quiz-show.png",
-    url: "/a/science-quiz-show",
+    image: "/activities/sci-meet.png",
+    banner: "/banner/sci-meet.png",
+    url: "/a/sci-meet",
     startDate: new Date(new Date("02/27/25").setHours(13, 0, 0, 0)),
     endDate: new Date(new Date("02/27/25").setHours(17, 0, 0, 0)),
-    isOverall: false,
-    isScored: true,
+    isOverall: true,
+    isScored: false,
   },
   {
-    name: "Interviewing With Smart Talking",
+    name: "Interviewing with Smart Talking",
     type: "event",
     image: "/activities/interviewing-with-smart-talking.png",
     banner: "/banner/interviewing-with-smart-talking.png",
     url: "/a/interviewing-with-smart-talking",
     startDate: new Date(new Date("02/27/25").setHours(15, 0, 0, 0)),
     endDate: new Date(new Date("02/27/25").setHours(17, 0, 0, 0)),
-    isOverall: false,
-    isScored: true,
+    isOverall: true,
+    isScored: false,
   },
   {
     name: "Innovation Pitching",
@@ -123,8 +123,8 @@ const activities = [
     url: "/a/innovation-pitching",
     startDate: new Date(new Date("02/27/25").setHours(9, 0, 0, 0)),
     endDate: new Date(new Date("02/27/25").setHours(17, 0, 0, 0)),
-    isOverall: false,
-    isScored: true,
+    isOverall: true,
+    isScored: false,
   },
 
   // 2/28
@@ -138,7 +138,7 @@ const activities = [
     startDate: new Date(new Date("02/28/25").setHours(9, 0, 0, 0)),
     endDate: new Date(new Date("02/28/25").setHours(10, 30, 0, 0)),
     isOverall: true,
-    isScored: true,
+    isScored: false,
   },
   {
     name: "Cosplay",
@@ -149,29 +149,29 @@ const activities = [
     startDate: new Date(new Date("02/28/25").setHours(10, 30, 0, 0)),
     endDate: new Date(new Date("02/28/25").setHours(12, 0, 0, 0)),
     isOverall: true,
-    isScored: true,
+    isScored: false,
   },
   {
-    name: "MLBB",
+    name: "Mobile Legends Competition",
     type: "event",
-    image: "/activities/mlbb.png",
-    banner: "/banner/mlbb.png",
-    url: "/a/mlbb",
+    image: "/activities/mobile-legends-competition.png",
+    banner: "/banner/mobile-legends-competition.png",
+    url: "/a/mobile-legends-competition",
     startDate: new Date(new Date("02/28/25").setHours(8, 0, 0, 0)),
     endDate: new Date(new Date("02/28/25").setHours(17, 0, 0, 0)),
-    isOverall: false,
-    isScored: true,
+    isOverall: true,
+    isScored: false,
   },
   {
-    name: "Street Dance",
+    name: "Street Dance Battle",
     type: "event",
-    image: "/activities/street-dance.png",
-    banner: "/banner/street-dance.png",
+    image: "/activities/street-dance-battle.png",
+    banner: "/banner/street-dance-battle.png",
     url: "/a/street-dance",
     startDate: new Date(new Date("02/28/25").setHours(13, 0, 0, 0)),
     endDate: new Date(new Date("02/28/25").setHours(16, 30, 0, 0)),
     isOverall: true,
-    isScored: true,
+    isScored: false,
   },
 ];
 
@@ -186,16 +186,16 @@ const categories = [
 
 const teams = [
   {
-    name: "AL MUNAWARA ISLAMIC SCHOOL",
+    name: "AL MUNAWWARA ISLAMIC SCHOOL",
     altName: "AMIS",
     num: 1,
     image: "/teams/amis.png",
   },
   {
     name: "AMYA POLYTECHNIC COLLEGE, INC.",
-    altName: "APCI",
+    altName: "AMYAPCI",
     num: 2,
-    image: "/teams/apci.png",
+    image: "/teams/amyapci.png",
   },
   {
     name: "ASSUMPTION COLLEGE OF DAVAO",
@@ -217,21 +217,21 @@ const teams = [
   },
   {
     name: "BROKENSHIRE COLLEGE, INC.",
-    altName: "BCI",
+    altName: "BC",
     num: 6,
-    image: "/teams/bci.png",
+    image: "/teams/bc.png",
   },
   {
     name: "CABANTIAN NATIONAL HIGH SCHOOL",
-    altName: "CNHS",
+    altName: "CabNHS",
     num: 7,
-    image: "/teams/cnhs.png",
+    image: "/teams/cabnhs.png",
   },
   {
     name: "CABANTIAN STAND ALONE SENIOR HIGH SCHOOL",
-    altName: "CSASHS",
+    altName: "CSA",
     num: 8,
-    image: "/teams/csashs.png",
+    image: "/teams/csa.png",
   },
   {
     name: "CALINAN NATIONAL HIGH SCHOOL",
@@ -240,10 +240,10 @@ const teams = [
     image: "/teams/calnhs.png",
   },
   {
-    name: "CARLOS P. GARCIA NATIONAL HIGH SCHOOL",
-    altName: "CPGNHS",
+    name: "CARLOS P. GARCIA SENIOR HIGH SCHOOL",
+    altName: "CPGSHS",
     num: 10,
-    image: "/teams/cpgnhs.png",
+    image: "/teams/cpgshs.png",
   },
   {
     name: "CATALUNAN PEQUEÑO NATIONAL HIGH SCHOOL",
@@ -252,7 +252,7 @@ const teams = [
     image: "/teams/cpnhs.png",
   },
   {
-    name: "DANIEL R. AGUINALDO'S NATIONAL HIGH SCHOOL",
+    name: "DANIEL R. AGUINALDO NATIONAL HIGH SCHOOL",
     altName: "DRANHS",
     num: 12,
     image: "/teams/dranhs.png",
@@ -276,16 +276,16 @@ const teams = [
     image: "/teams/dcnhs.png",
   },
   {
-    name: "DAVAO VISION COLLEGE, INC.",
-    altName: "DVCI",
+    name: "DAVAO VISION COLLEGES, INC.",
+    altName: "DVC",
     num: 16,
-    image: "/teams/dvci.png",
+    image: "/teams/dvc.png",
   },
   {
     name: "DAVAO WISDOM ACADEMY, INC.",
-    altName: "DWAI",
+    altName: "DWA",
     num: 17,
-    image: "/teams/dwai.png",
+    image: "/teams/dwa.png",
   },
   {
     name: "DIGOS CITY NATIONAL HIGH SCHOOL",
@@ -301,9 +301,9 @@ const teams = [
   },
   {
     name: "HOLY CROSS COLLEGE OF CALINAN, INC.",
-    altName: "HCCCI",
+    altName: "HCCC",
     num: 20,
-    image: "/teams/hccci.png",
+    image: "/teams/hccc.png",
   },
   {
     name: "HOLY CROSS OF AGDAO",
@@ -344,9 +344,12 @@ const teams = [
   {
     name: "MINTAL COMPREHENSIVE HIGH SCHOOL - SENIOR HIGH SCHOOL",
     altName: "MCHS-SHS",
-    num: 27,
+    num: 26,
     image: "/teams/mchs-shs.png",
   },
+
+  ///
+
   {
     name: "PABLO LORENZO NATIONAL HIGH SCHOOL",
     altName: "PLNHS",
@@ -373,9 +376,9 @@ const teams = [
   },
   {
     name: "PHILIPPINE WOMEN'S COLLEGE OF DAVAO",
-    altName: "PWCD",
+    altName: "PWC",
     num: 32,
-    image: "/teams/pwcd.png",
+    image: "/teams/pwc.png",
   },
   {
     name: "PRECIOUS INTERNATIONAL SCHOOL OF DAVAO",
@@ -397,9 +400,9 @@ const teams = [
   },
   {
     name: "SAINT MICHAEL'S SCHOOL OF PADADA, INC.",
-    altName: "SMSPI",
+    altName: "SMSP",
     num: 36,
-    image: "/teams/smspi.png",
+    image: "/teams/smsp.png",
   },
   {
     name: "SAN PEDRO COLLEGE",
@@ -409,15 +412,15 @@ const teams = [
   },
   {
     name: "SAN PEDRO COLLEGE BASIC EDUCATION - DEPARTMENT, ULAS CAMPUS",
-    altName: "SPCBE-U",
+    altName: "SPC-Ulas",
     num: 38,
-    image: "/teams/spcbe-u.png",
+    image: "/teams/spc-ulas.png",
   },
   {
     name: "ST. PETER'S COLLEGE OF TORIL, INC.",
-    altName: "SPCTI",
+    altName: "SPCT",
     num: 39,
-    image: "/teams/spcti.png",
+    image: "/teams/spct.png",
   },
   {
     name: "STA. ANA NATIONAL HIGH SCHOOL",
@@ -433,9 +436,9 @@ const teams = [
   },
   {
     name: "STI COLLEGE OF DAVAO",
-    altName: "STID",
+    altName: "STI",
     num: 42,
-    image: "/teams/stid.png",
+    image: "/teams/sti.png",
   },
   {
     name: "STO. NIÑO NATIONAL HIGH SCHOOL",
@@ -451,9 +454,9 @@ const teams = [
   },
   {
     name: "TAGUM CITY REGIONAL ACADEMY FOR SENIOR HIGH SCHOOL",
-    altName: "TCRASH",
+    altName: "TCRASHS",
     num: 45,
-    image: "/teams/tcrash.png",
+    image: "/teams/tcrashS.png",
   },
   {
     name: "TAGUM DOCTORS COLLEGE, INC.",
@@ -469,11 +472,16 @@ const teams = [
   },
   {
     name: "TUGBOK NATIONAL HIGH SCHOOL",
-    altName: "TUNHS",
+    altName: "TuNHS",
     num: 48,
     image: "/teams/tunhs.png",
   },
-  { name: "UM TAGUM", altName: "UMT", num: 49, image: "/teams/umt.png" },
+  {
+    name: "UM TAGUM COLLEGE",
+    altName: "UMTC",
+    num: 49,
+    image: "/teams/umtc.png",
+  },
   {
     name: "UNIVERSITY OF THE IMMACULATE CONCEPTION",
     altName: "UIC",
