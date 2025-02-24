@@ -123,7 +123,7 @@ const Overall = ({ scores }: OverallProps) => {
                       3
                     </span>
                   </th>
-                  <th className="text-white font-semibold text-right px-2 md:px-6 py-2">
+                  <th className="text-white font-semibold text-center lg:text-right px-2 md:px-6 py-2">
                     Total
                   </th>
                   <th className="w-10"></th>

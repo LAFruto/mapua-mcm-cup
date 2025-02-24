@@ -1,10 +1,8 @@
-"use client";
-
 import { cn, getListColor } from "~/lib/util";
-import { Score, ScoreType } from "~/types";
+import type { Score, ScoreType } from "~/types";
 import { PlusIcon } from "./icons/Plus";
 import { Image } from "./Image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { MinusIcon } from "./icons/Minus";
 
 interface MedalRowProps {
@@ -27,6 +25,7 @@ const getPodiumText = (position: number) => {
 
 const MedalRow = ({ score }: MedalRowProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef<HTMLTableCellElement>(null);
 
   return (
     <>
@@ -46,7 +45,7 @@ const MedalRow = ({ score }: MedalRowProps) => {
           <div className="flex items-center gap-4">
             <div className="relative w-12 h-12 lg:w-16 lg:h-16 rounded-full flex-shrink-0">
               <Image
-                src={score.image || "/placeholder.svg"}
+                src={score.image}
                 height={1024}
                 width={1024}
                 fill
@@ -84,7 +83,7 @@ const MedalRow = ({ score }: MedalRowProps) => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={cn(
-                "flex items-center justify-center w-10 h-10 rounded-sm transition-colors",
+                "flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-sm transition-colors",
                 !isOpen
                   ? "bg-red-800 hover:bg-red-700"
                   : "bg-slate-100 border-blue-950 border "
@@ -103,57 +102,65 @@ const MedalRow = ({ score }: MedalRowProps) => {
           <></>
         )}
       </tr>
-      {isOpen && (
-        <tr className="bg-white border" id={`medal-details-${score.team}`}>
-          <td colSpan={7} className="px-4 md:px-8 py-4">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-slate-200">
-                    <th className="text-left py-2 px-4 text-sm font-semibold text-slate-600">
-                      Medal
-                    </th>
-                    <th className="text-left py-2 px-4 text-sm font-semibold text-slate-600">
-                      Event
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {score.medals?.map((medal, index) => (
-                    <tr
-                      key={index}
-                      className="border-b border-slate-100 last:border-0"
-                    >
-                      <td className="py-2 px-4">
-                        <div
-                          className={cn(
-                            "w-8 h-8 rounded-full flex items-center justify-center",
-                            medal.position === 1
-                              ? "bg-red-800"
-                              : medal.position === 2
-                              ? "bg-blue-800"
-                              : "bg-blue-400"
-                          )}
-                        >
-                          <span className="text-white font-bold">
-                            {medal.position}
-                          </span>
-                        </div>
-                      </td>
-                      <td className="py-2 px-4 text-slate-900">
-                        {medal.category ? medal.category : medal.activity}
-                      </td>
-                      <td className="py-2 px-4 text-slate-900 font-medium">
-                        {getPodiumText(medal.position)}
-                      </td>
+      <tr className="bg-white border">
+        <td colSpan={7} className="p-0">
+          <div
+            className={cn(
+              "transition-all duration-300 ease-in-out",
+              isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+            )}
+            style={{ overflow: "hidden" }}
+          >
+            <div ref={contentRef} className="px-4 md:px-8 py-4">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-slate-200">
+                      <th className="text-left py-2 px-4 text-sm font-semibold text-slate-600">
+                        Medal
+                      </th>
+                      <th className="text-left py-2 px-4 text-sm font-semibold text-slate-600">
+                        Event
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {score.medals?.map((medal, index) => (
+                      <tr
+                        key={index}
+                        className="border-b border-slate-100 last:border-0"
+                      >
+                        <td className="py-2 px-4">
+                          <div
+                            className={cn(
+                              "w-8 h-8 rounded-full flex items-center justify-center",
+                              medal.position === 1
+                                ? "bg-red-800"
+                                : medal.position === 2
+                                ? "bg-blue-800"
+                                : "bg-blue-400"
+                            )}
+                          >
+                            <span className="text-white font-bold">
+                              {medal.position}
+                            </span>
+                          </div>
+                        </td>
+                        <td className="py-2 px-4 text-slate-900">
+                          {medal.category ? medal.category : medal.activity}
+                        </td>
+                        <td className="py-2 px-4 text-slate-900 font-medium">
+                          {getPodiumText(medal.position)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </td>
-        </tr>
-      )}
+          </div>
+        </td>
+      </tr>
     </>
   );
 };
