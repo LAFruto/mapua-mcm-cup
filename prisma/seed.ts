@@ -456,7 +456,7 @@ const teams = [
     name: "TAGUM CITY REGIONAL ACADEMY FOR SENIOR HIGH SCHOOL",
     altName: "TCRASHS",
     num: 45,
-    image: "/teams/tcrashS.png",
+    image: "/teams/tcrashs.png",
   },
   {
     name: "TAGUM DOCTORS COLLEGE, INC.",
