@@ -56,6 +56,7 @@ export type Category = {
 export type Score = {
   score?: number | null; // Allow null as well as undefined
   image: string;
+  name: string;
   team: string;
   participant?: string | null; // Allow null as a possible value
   rank?: number | null;
@@ -64,10 +65,9 @@ export type Score = {
 
 export type Medal = {
   activity: string;
-  position: Position;
+  category?: string | null;
+  position: number;
 };
-
-type Position = 1 | 2 | 3;
 
 export type ScoreType = "team" | "participant";
 

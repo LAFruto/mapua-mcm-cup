@@ -46,12 +46,12 @@ export const meta: MetaFunction = () => {
 
 export const loader = async () => {
   const events = await getActivitiesByType("event");
-  const sports = await getActivitiesByType("sport");
   const overall = await getOverall();
+
+  console.dir(overall.categories[0], { depth: null });
 
   return {
     events: events,
-    sports: sports,
     overall: overall.categories[0].scores,
   };
 };

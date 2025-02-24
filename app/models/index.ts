@@ -7,6 +7,8 @@ export async function getOverall() {
   const overall = await dbk
     .selectFrom("Cluster as c")
     .select((eb) => [
+      "c.id",
+      "c.name",
       "c.altName as team",
       "c.image",
       jsonObjectFrom(
@@ -31,12 +33,20 @@ export async function getOverall() {
     ])
     .groupBy("c.id")
     .execute();
+
   const output: Leaderboard = {
     activity: "overall",
     categories: [{ category: null, scores: [] }],
   };
+
+  const medals = await getMedals();
+
+  console.log("Hello", medals);
+
   for (const o of overall) {
+    const teamMedals = medals.filter((m) => m.clusterId === o.id);
     output.categories[0].scores.push({
+      name: o.name,
       team: o.team,
       image: o.image,
       rank: null,
@@ -44,10 +54,32 @@ export async function getOverall() {
         o.cosplay!.score != null
           ? o.general!.score! + o.cosplay!.score
           : o.general!.score!,
+      medals: teamMedals.map((m) => ({
+        activity: m.activityName,
+        category: m.categoryName,
+        position: m.rank,
+      })),
     });
   }
-  // console.dir(overall, { depth: null });
   return output as Leaderboard;
+}
+
+async function getMedals() {
+  return await dbk
+    .selectFrom("Tally as t")
+    .innerJoin("Activity as a", "a.id", "t.activityId")
+    .innerJoin("Cluster as c", "c.id", "t.clusterId")
+    .leftJoin("Category as cat", "cat.id", "t.categoryId")
+    .where("t.rank", "<=", 3)
+    .select([
+      "t.clusterId",
+      "c.altName as teamName",
+      "a.name as activityName",
+      "t.rank",
+      "t.categoryId",
+      "cat.name as categoryName",
+    ])
+    .execute();
 }
 
 export async function getLeaderboardById(activity: string) {

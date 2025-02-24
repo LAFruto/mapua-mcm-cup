@@ -19,7 +19,7 @@ const Hero = ({ activities }: HeroProps) => {
             <div className="flex justify-center md:h-2/5 gap-6">
               <div className="flex-shrink-0 self-center w-40 lg:w-64 h-auto">
                 <Image
-                  src="/logo.svg"
+                  src="/logo4.svg"
                   alt="Mapua MCM Cup Logo"
                   width={512}
                   height={512}

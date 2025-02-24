@@ -7,7 +7,7 @@ interface ScoreRowProps {
   type?: ScoreType;
 }
 
-const ScoreRow = ({ score, type = "team" }: ScoreRowProps) => {
+const ScoreRow = ({ score }: ScoreRowProps) => {
   return (
     <tr className="border-b border-slate-300 bg-slate-100">
       <td className="items-center justify-center h-full px-4 md:px-6 py-2">
@@ -33,7 +33,12 @@ const ScoreRow = ({ score, type = "team" }: ScoreRowProps) => {
               className="object-contain h-full w-full overflow-hidden ded-frounull"
             />
           </div>
-          <p className="uppercase text-md lg:text-xl font-bold">{score.team}</p>
+          <div>
+            <p className="uppercase text-md lg:text-xl font-bold">
+              {score.team}
+            </p>
+            <p className="uppercase text-xs font-semibold">{score.name}</p>
+          </div>
         </div>
       </td>
       <td className="px-6 py-2 text-right">
