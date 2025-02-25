@@ -87,14 +87,14 @@ const FooterBody = ({ events }: { events: ActivityRecord[] }) => {
     <div className="border-y border-white flex flex-col lg:grid grid-cols-4 text-white">
       <div className="flex flex-col justify-between h-full lg:border-r py-12 px-4">
         <div className="flex flex-col gap-4">
-          <p className="text-sm">For further details, download the rulebook:</p>
+          <p className="text-sm">For further details, view the rulebook:</p>
           <Link
             to="/rule-book.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-red-600 text-white font-bold px-4 py-2 rounded-sm hover:bg-red-600/90 text-center transition-all"
           >
-            Download Rulebook
+            View Rulebook
           </Link>
         </div>
         <div className="hidden lg:flex flex-col ">
@@ -142,7 +142,7 @@ const FooterBody = ({ events }: { events: ActivityRecord[] }) => {
           {socials.map((s, index) => (
             <div
               className={cn(
-                "h-full w-full py-4 lg:py-10 flex lg:items-center lg:justify-center gap-4",
+                "h-full w-full p-4 lg:py-10 flex lg:items-center lg:justify-center gap-4",
                 index != 2 && "lg:border-r border-white"
               )}
             >
