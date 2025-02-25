@@ -241,6 +241,11 @@ export async function getActivitiesByType(type: ActivityType) {
       "at.name as type",
       "a.isOverall",
       "a.isScored",
+      "a.location",
+      "a.head",
+      "a.title",
+      "a.contact",
+      "a.email",
     ])
     .orderBy("startDate asc")
     .execute();

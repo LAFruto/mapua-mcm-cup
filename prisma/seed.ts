@@ -33,7 +33,7 @@ const activities = [
 
     location: "Mapúa MCM Plaza",
     head: "CEDRIC JOSEPH R. MANDAP",
-    title: "MTV SPOOF Event Chair",
+    title: "MTV Spoof Event Chair",
     contact: "(0923) 601-2285",
   },
   {

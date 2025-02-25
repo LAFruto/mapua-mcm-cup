@@ -9,8 +9,8 @@ import { getEventStatus } from "~/lib/util";
 import { ActivityRecord } from "~/types";
 import { CountdownTimer } from "../CountdownTimer";
 import { Image } from "../Image";
-import Arrow from "../icons/Arrow";
 import { DotButton, useDotButton } from "../ui/EmblaCarouselDotButton";
+import DoubleChevron from "../icons/DoubleChevron";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const AUTOPLAY_DELAY = 5000;
@@ -161,7 +161,7 @@ const HeroCarousel = ({ activities }: HeroCarouselProps) => {
                               </div>
                             </div>
                             <div className="w-[30px] h-[30px] flex items-center group-hover:translate-x-2 transform transition-transform duration-300 ease-in-out">
-                              <Arrow />
+                              <DoubleChevron />
                             </div>
                           </div>
                         )}

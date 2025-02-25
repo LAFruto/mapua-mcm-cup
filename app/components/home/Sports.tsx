@@ -4,9 +4,9 @@ import { cn, getEventStatus } from "~/lib/util";
 import { ActivityRecord } from "../../types";
 import { CountdownTimer } from "../CountdownTimer";
 import HoverMedal from "../HoverMedal";
-import Arrow from "../icons/Arrow";
 import Ball from "../icons/Ball";
 import { Image } from "../Image";
+import DoubleChevron from "../icons/DoubleChevron";
 
 interface SportsProps {
   sports: ActivityRecord[];
@@ -107,7 +107,7 @@ const Sports = ({ sports }: SportsProps) => {
                         </div>
                       </div>
                       <div className="w-3 h-3 -rotate-45 group-hover:translate-x-2 transform transition-transform duration-300 ease-in-out">
-                        <Arrow />
+                        <DoubleChevron />
                       </div>
                     </div>
                   )}

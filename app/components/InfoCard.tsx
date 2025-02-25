@@ -4,12 +4,12 @@ import Pin from "./icons/Pin";
 import User from "./icons/User";
 
 interface InfoCardProps {
-  date?: Date;
-  timeRange?: string;
-  location?: string;
-  head: string;
-  contact?: string;
-  email?: string;
+  date?: Date | null;
+  timeRange?: string | null;
+  location?: string | null;
+  head: string | null;
+  contact?: string | null;
+  email?: string | null;
 }
 
 const InfoCard = ({

@@ -3,8 +3,8 @@ import { useCurrentTime } from "~/hooks/useCurrentTime";
 import { cn, getEventStatus } from "~/lib/util";
 import { ActivityRecord } from "../../types";
 import { CountdownTimer } from "../CountdownTimer";
-import Arrow from "../icons/Arrow";
 import { Image } from "../Image";
+import DoubleChevron from "../icons/DoubleChevron";
 interface EventsProps {
   events: ActivityRecord[];
 }
@@ -122,7 +122,7 @@ const Events = ({ events }: EventsProps) => {
                           </div>
                         </div>
                         <div className="flex w-4 h-5  group-hover:translate-x-1 transform transition-transform duration-300 ease-in-out">
-                          <Arrow />
+                          <DoubleChevron />
                         </div>
                       </div>
                     )}
@@ -133,7 +133,6 @@ const Events = ({ events }: EventsProps) => {
           </div>
         </div>
       </section>
-      <div className="relative z-10 bg-[url(/event-footer.svg)] bg-cover bg-center bg-no-repeat flex items-center px-[5%] h-32 -my-28 overflow-visible"></div>
     </div>
   );
 };

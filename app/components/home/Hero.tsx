@@ -11,7 +11,10 @@ interface HeroProps {
 const Hero = ({ activities }: HeroProps) => {
   return (
     <>
-      <section className="bg-[url(/hero-bg.png)] bg-cover bg-center bg-no-repeat outline-blue-950 outline-8 max-container padding-container py-[4%] lg:py-[2%] z-10 h-screen flex flex-col">
+      <section
+        id="hero"
+        className="bg-[url(/hero-bg.png)] bg-cover bg-center bg-no-repeat outline-blue-950 outline-8 max-container padding-container py-[4%] lg:py-[2%] z-10 h-screen flex flex-col"
+      >
         <div className="flex flex-col lg:grid lg:grid-cols-3 xl:grid-cols-4 gap-4 flex-grow">
           {/* Left Section (Logo + Hero Carousel) */}
           <div className="md:col-span-2 lg:col-span-2 xl:col-span-3 flex flex-col gap-4 flex-grow">

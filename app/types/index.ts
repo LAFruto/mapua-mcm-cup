@@ -14,11 +14,11 @@ export type ActivityMutation = {
   isOverall: boolean; // if event is included in the overall tabulation
   isScored: boolean;
 
-  location?: string;
-  head?: string;
-  title?: string;
-  email?: string;
-  contact?: string;
+  location: string | null;
+  head: string | null;
+  title: string | null;
+  email: string | null;
+  contact: string | null;
 };
 
 export type ActivityRecord = ActivityMutation & {

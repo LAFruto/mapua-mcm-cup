@@ -62,7 +62,7 @@ export default function Index() {
       <Hero activities={[...events]} />
       <Overall scores={overall} />
       <EventCarousel events={events} />
-      <Footer />
+      <Footer events={events} />
     </>
   );
 }

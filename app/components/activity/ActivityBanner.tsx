@@ -3,13 +3,9 @@ import { useCurrentTime } from "~/hooks/useCurrentTime";
 import { getEventStatus } from "~/lib/util";
 import { ActivityRecord } from "~/types";
 import { CountdownTimer } from "../CountdownTimer";
-import HoverMedal from "../HoverMedal";
 import { Image } from "../Image";
-import Arrow from "../icons/Arrow";
-import ActivityBadge from "./ActivityBadge";
-import Clock from "../icons/Clock";
-import Pin from "../icons/Pin";
 import InfoCard from "../InfoCard";
+import DoubleChevron from "../icons/DoubleChevron";
 
 interface ActivityBannerProps {
   activity: ActivityRecord;
@@ -43,7 +39,7 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
               className="inline-flex w-full items-center gap-2 text-white lg:px-4 py-1.5 group"
             >
               <div className="w-[15px] h-[15px] md:w-[30px] md:h-[30px] mr-2 group-hover:-translate-x-2 transform transition-transform duration-300 ease-in-out rotate-180 flex items-center">
-                <Arrow />
+                <DoubleChevron />
               </div>
               <div className="h-7 md:h-10 overflow-hidden mr-2">
                 <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
@@ -107,8 +103,8 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
                     location={activity.location}
                     date={activity.startDate}
                     timeRange={status.timeRange}
-                    head={activity.head || ""}
-                    contact={activity.contact || ""}
+                    head={activity.head}
+                    contact={activity.contact || null}
                   />
                 </div>
               ) : (
