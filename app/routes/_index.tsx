@@ -48,7 +48,7 @@ export const loader = async () => {
   const events = await getActivitiesByType("event");
   const overall = await getOverall();
 
-  console.dir(overall.categories[0], { depth: null });
+  // console.dir(overall.categories[0], { depth: null });
 
   return {
     events: events,

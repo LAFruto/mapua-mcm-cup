@@ -223,7 +223,7 @@ export async function getOverallLeaderboardBreakdown() {
     .execute();
 
   const output = { activities: activity, categories: category };
-  console.dir(output, { depth: null });
+  // console.dir(output, { depth: null });
 }
 
 export async function getActivitiesByType(type: ActivityType) {

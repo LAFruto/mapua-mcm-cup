@@ -85,6 +85,7 @@ export async function importExcel(params: {
         .where("a.name", "ilike", act)
         .select("a.id")
         .executeTakeFirst();
+
       if (!q) return "Invalid Activity";
       actId = q.id;
     } else {
@@ -141,9 +142,10 @@ export async function importExcel(params: {
 
         const id = await dbk
           .selectFrom("Cluster as t")
-          .where("t.altName", "=", team)
+          .where("t.name", "=", team)
           .select("t.id")
           .executeTakeFirst();
+
         if (!id) {
           return "Invalid Cluster Name: " + team;
         } else {
