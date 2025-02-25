@@ -13,6 +13,12 @@ const activities = [
     endDate: new Date(new Date("02/26/25").setHours(12, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "CHRISTOPHER JOSH L. DELLOSA",
+    title: "Cheerdance Event Chair",
+    contact: "(0919) 082-7175",
+    email: "cjdellosa@mcm.edu.ph",
   },
   {
     name: "MTV Spoof",
@@ -24,6 +30,11 @@ const activities = [
     endDate: new Date(new Date("02/26/25").setHours(15, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "CEDRIC JOSEPH R. MANDAP",
+    title: "MTV SPOOF Event Chair",
+    contact: "(0923) 601-2285",
   },
   {
     name: "Singing Idol",
@@ -35,6 +46,11 @@ const activities = [
     endDate: new Date(new Date("02/26/25").setHours(17, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "KEITH COLEEN N. MACEDA",
+    title: "Singing Idol Event Chair",
+    contact: "(0918) 335-1095",
   },
   {
     name: "Code Clash",
@@ -46,6 +62,11 @@ const activities = [
     endDate: new Date(new Date("02/26/25").setHours(17, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Indoor",
+    head: "MARTZEL BASTE",
+    title: "Programming Competition Event Chair",
+    email: "mbaste@mcm.edu.ph",
   },
 
   // 2/27
@@ -59,6 +80,11 @@ const activities = [
     endDate: new Date(new Date("02/27/25").setHours(10, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "FEBBIE FAITH S. RAMOS",
+    title: "Singing Duets Event Chair",
+    contact: "(0995) 225-5711",
   },
   {
     name: "Craft 1-4-6",
@@ -70,6 +96,11 @@ const activities = [
     endDate: new Date(new Date("02/27/25").setHours(12, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "ALMA ROSE T. MARQUEZ",
+    title: "Craft 1.4.6 Event Chair",
+    contact: "(0991) 226-4497",
   },
   {
     name: "Square Off",
@@ -81,6 +112,11 @@ const activities = [
     endDate: new Date(new Date("02/27/25").setHours(12, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Room A409 & A410 Admin Building",
+    head: "ENGR. ANNA JEDIDIAH S. ROQUE",
+    title: "Mathematics Quiz Show Event Chair",
+    email: "ajsroque@mcm.edu.ph",
   },
   {
     name: "Speak Up",
@@ -92,6 +128,12 @@ const activities = [
     endDate: new Date(new Date("02/27/25").setHours(15, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "MATTHEW MARK D. OBREGON",
+    title: "Speak Up Event Chair",
+    email: "erbatenga@mcm.edu.ph",
+    contact: "(0947) 796-1451",
   },
   {
     name: "Sci Meet",
@@ -103,6 +145,12 @@ const activities = [
     endDate: new Date(new Date("02/27/25").setHours(17, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Room A409 & A410 Admin Building",
+    head: "ENGR. FROILAN N. JIMENO II",
+    title: "Science Quiz Show Event Chair",
+    email: "fnjimeno@mcm.edu.ph",
+    contact: "(0906) 207-3361",
   },
   {
     name: "Interviewing with Smart Talking",
@@ -114,6 +162,12 @@ const activities = [
     endDate: new Date(new Date("02/27/25").setHours(17, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "HEIDEGGER JAKE DIACONO",
+    title: "Interviewing with Smart Talking Event Chair",
+    contact: "(0963) 941-2201",
+    email: "hjbdiacono@mcm.edu.ph",
   },
   {
     name: "Innovation Pitching",
@@ -125,6 +179,11 @@ const activities = [
     endDate: new Date(new Date("02/27/25").setHours(17, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Indoor",
+    head: "DAISY B. AREJA",
+    title: "Innovation Pitching Event Chair",
+    email: "dbareja@mcm.edu.ph",
   },
 
   // 2/28
@@ -139,6 +198,11 @@ const activities = [
     endDate: new Date(new Date("02/28/25").setHours(10, 30, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "JOVAIRA MANGUBAT",
+    title: "Jazz Chant Event Chair",
+    contact: "(0948) 345-0999",
   },
   {
     name: "Cosplay",
@@ -150,6 +214,11 @@ const activities = [
     endDate: new Date(new Date("02/28/25").setHours(12, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "MOIRA MONINA V. DUMAGAN",
+    title: "Cosplay Event Chair",
+    email: "mmvdumagan@mcm.edu.ph",
   },
   {
     name: "Mobile Legends Competition",
@@ -161,6 +230,12 @@ const activities = [
     endDate: new Date(new Date("02/28/25").setHours(17, 0, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Indoor",
+    head: "PHILIP CENTENE D. SILOTERIO",
+    title: "E-sports Event Chair",
+    email: "erbatenga@mcm.edu.ph",
+    contact: "(0927) 110-2041",
   },
   {
     name: "Street Dance Battle",
@@ -172,6 +247,11 @@ const activities = [
     endDate: new Date(new Date("02/28/25").setHours(16, 30, 0, 0)),
     isOverall: true,
     isScored: false,
+
+    location: "Mapúa MCM Plaza",
+    head: "AR. MARTINEE LLEMIT",
+    title: "Street Dance Event Chair",
+    contact: "(0977) 317-5693",
   },
 ];
 
@@ -521,6 +601,11 @@ const seed = async () => {
         isScored: activity.isScored,
         startDateTime: activity.startDate,
         endDateTime: activity.endDate,
+        location: activity.location,
+        head: activity.head,
+        title: activity.title,
+        contact: activity.contact,
+        email: activity.email,
         activityType: {
           connect: {
             name: activity.type,
@@ -534,6 +619,11 @@ const seed = async () => {
         isScored: activity.isScored,
         startDateTime: activity.startDate,
         endDateTime: activity.endDate,
+        location: activity.location,
+        head: activity.head,
+        title: activity.title,
+        contact: activity.contact,
+        email: activity.email,
       },
     });
   }

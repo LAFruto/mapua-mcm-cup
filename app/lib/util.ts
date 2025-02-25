@@ -168,7 +168,7 @@ export function getEventStatus(
     };
   }
 
-  return { type: "completed", message: "Event has ended", timeRange };
+  return { type: "finished", message: "Event has ended", timeRange };
 }
 
 export const getPodiumColor = (position: number): string => {

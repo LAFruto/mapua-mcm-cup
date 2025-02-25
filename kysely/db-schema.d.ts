@@ -31,13 +31,18 @@ export interface Activity {
   activityTypeId: number;
   altName: string;
   banner: string;
+  contact: string | null;
+  email: string | null;
   endDateTime: Timestamp;
+  head: string | null;
   id: Generated<number>;
   image: string;
   isOverall: boolean;
   isScored: boolean;
+  location: string | null;
   name: string;
   startDateTime: Timestamp;
+  title: string | null;
   url: string;
 }
 

@@ -17,6 +17,12 @@ model Activity {
   banner         String
   url            String
 
+  location String?
+  head     String?
+  contact  String?
+  email    String?
+  title    String?
+
   // parentId       Int?
 
   // PARADE OF FESTIVALS (MR, MS, LIVELIEST DELEGATION, BEST FLOAT, BEST PERFORMANCE)
@@ -117,7 +123,7 @@ model Team {
 }
 
 model Participant {
-  id         Int    @id @default(autoincrement())
+  id         Int     @id @default(autoincrement())
   name       String
   altName    String?
   activityId Int

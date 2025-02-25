@@ -267,7 +267,12 @@ export async function getActivityById(id: string) {
       "a.url",
       "at.name as type",
       "a.isOverall",
+      "a.location",
+      "a.head",
       "a.isScored",
+      "a.title",
+      "a.contact",
+      "a.email",
     ])
     .executeTakeFirst();
 }

@@ -13,6 +13,12 @@ export type ActivityMutation = {
   endDate: Date; // End date and time
   isOverall: boolean; // if event is included in the overall tabulation
   isScored: boolean;
+
+  location?: string;
+  head?: string;
+  title?: string;
+  email?: string;
+  contact?: string;
 };
 
 export type ActivityRecord = ActivityMutation & {
@@ -36,8 +42,8 @@ export type Person = {
 export type EventStatus =
   | { type: "upcoming"; message: string; timeRange: string }
   | { type: "countdown"; timeUntilStart: number; timeRange: string }
-  | { type: "ongoing"; message: string }
-  | { type: "finished"; message: string };
+  | { type: "ongoing"; message: string; timeRange: string }
+  | { type: "finished"; message: string; timeRange: string };
 
 // POLISH
 export type MedalColor = "blue" | "yellow" | "red" | "light-blue";

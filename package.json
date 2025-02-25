@@ -1,5 +1,5 @@
 {
-  "name": "c-users-legion-projects-hudyaka",
+  "name": "c-users-legion-projects-mapuamcmcup2025",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -11,7 +11,7 @@
     "typecheck": "tsc",
     "seed": "tsx prisma/seed.ts",
     "reset": "npx prisma migrate reset -f && npx prisma db push",
-    "codegen": "kysely-codegen --dialect postgres --schema=hudyaka --include-pattern=hudyaka.* --out-file ./kysely/db-schema.d.ts"
+    "codegen": "kysely-codegen --dialect postgres --schema=mapuamcmcup --include-pattern=mapuamcmcup.* --out-file ./kysely/db-schema.d.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
