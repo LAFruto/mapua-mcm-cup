@@ -11,7 +11,6 @@ import ScoreRow from "../ScoreRow";
 interface OverallProps {
   scores: Score[];
 }
-
 const ITEMS_PER_PAGE = 8;
 
 const Overall = ({ scores }: OverallProps) => {
