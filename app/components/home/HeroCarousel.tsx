@@ -145,22 +145,6 @@ const HeroCarousel = ({ activities }: HeroCarouselProps) => {
                               </div>
                             </div>
                           </div>
-                        ) : status.type === "upcoming" ? (
-                          <div className="mt-2 inline-flex w-full justify-center rounded-lg items-center gap-2 text-white lg:px-4 py-1.5">
-                            <div className="h-7 overflow-hidden mr-2">
-                              <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                                <p className="font-header uppercase text-nowrap text-lg md:text-xl font-bold">
-                                  {status.message}
-                                </p>
-                                <p className="font-header uppercase text-nowrap text-lg md:text-xl font-bold">
-                                  {status.message}
-                                </p>
-                              </div>
-                            </div>
-                            <div className="w-[30px] h-[30px] flex items-center group-hover:translate-x-2 transform transition-transform duration-300 ease-in-out">
-                              <Arrow />
-                            </div>
-                          </div>
                         ) : (
                           <div className="mt-2 inline-flex w-full justify-center rounded-lg items-center gap-2 text-white lg:px-4 py-1.5">
                             <div className="h-7 overflow-hidden mr-2">
