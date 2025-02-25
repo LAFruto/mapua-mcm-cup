@@ -87,6 +87,7 @@ export function getEventStatus(
   const serverNow = new Date();
   const phNow = new Date(serverNow);
   phNow.setHours(phNow.getHours());
+
   const startDate = new Date(start);
   const endDate = new Date(end);
 
@@ -94,7 +95,7 @@ export function getEventStatus(
     throw new Error("Invalid start or end date provided");
   }
 
-  const oneDayMs = 24 * 60 * 60 * 1000; // Milliseconds in a day
+  const oneDayMs = 24 * 60 * 60 * 1000;
 
   // Get calendar day differences, ignoring time
   const daysUntilStart = Math.ceil(
@@ -104,8 +105,16 @@ export function getEventStatus(
   const timeUntilStart = startDate.getTime() - phNow.getTime();
   const timeUntilEnd = endDate.getTime() - phNow.getTime();
 
-  // Format time range as "4:00 PM - 5:00 PM" with +8 timezone offset
-  const timeRange = ""; //TODO;
+  // Format time range as "4:00 PM - 5:00 PM" in Philippine Time (GMT+8)
+  const formatTime = (date: Date) =>
+    new Intl.DateTimeFormat("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+      timeZone: "Asia/Manila",
+    }).format(date);
+
+  const timeRange = `${formatTime(startDate)} - ${formatTime(endDate)}`;
 
   const months = [
     "January",
@@ -124,13 +133,12 @@ export function getEventStatus(
 
   const day = parseInt(start.toISOString().split("T")[0].split("-")[2], 10);
 
-  // Check if the event hasn't started yet
   if (timeUntilStart > 0) {
     if (timeUntilStart < oneDayMs) {
       return {
         type: "countdown",
         timeUntilStart,
-        timeRange: timeRange,
+        timeRange,
       };
     } else {
       return {
@@ -139,7 +147,7 @@ export function getEventStatus(
           daysUntilStart === 1
             ? "Starting Tomorrow!"
             : `${months[startDate.getMonth()]} ${day}`,
-        timeRange: timeRange,
+        timeRange,
       };
     }
   }
@@ -148,22 +156,19 @@ export function getEventStatus(
     return {
       type: "ongoing",
       message: "Now Happening!",
+      timeRange,
     };
   }
 
-  // Event has finished but not scored
   if (!isScored) {
     return {
       type: "ongoing",
       message: "Waiting for results",
+      timeRange,
     };
   }
 
-  // Event has finished and scored
-  return {
-    type: "finished",
-    message: "Results are out!",
-  };
+  return { type: "completed", message: "Event has ended", timeRange };
 }
 
 export const getPodiumColor = (position: number): string => {

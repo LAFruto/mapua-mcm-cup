@@ -7,6 +7,7 @@ import HoverMedal from "../HoverMedal";
 import { Image } from "../Image";
 import Arrow from "../icons/Arrow";
 import ActivityBadge from "./ActivityBadge";
+import Clock from "../icons/Clock";
 
 interface ActivityBannerProps {
   activity: ActivityRecord;
@@ -72,18 +73,18 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
                   timeUntilStart={status.timeUntilStart}
                   className="text-lg md:text-xl"
                 />
-                {/* <p className="inline-flex items-center bg-red-800  text-white rounded-md px-4 py-1">
+                <p className="inline-flex items-center bg-red-800  text-white rounded-md px-4 py-1">
                   <Clock className="w-4 h-4 mr-2" />
                   {status.timeRange}
-                </p> */}
+                </p>
               </div>
             ) : status.type === "upcoming" ? (
               <div className="flex flex-col w-full justify-center items-center gap-2 text-white lg:px-4 py-1.5 font-semibold mt-4">
                 <p className="text-lg lg:text-xl">{status.message}</p>
-                {/* <p className="inline-flex items-center bg-red-800 text-white rounded-md px-4 py-1">
+                <p className="inline-flex items-center bg-red-800 text-white rounded-md px-4 py-1">
                   <Clock className="w-4 h-4 mr-2" />
                   {status.timeRange}
-                </p> */}
+                </p>
               </div>
             ) : (
               <div className="flex items-center justify-center">
