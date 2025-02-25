@@ -126,18 +126,24 @@ const HeroCarousel = ({ activities }: HeroCarouselProps) => {
                             <div className="h-8 overflow-hidden mr-2">
                               <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
                                 <div className="font-header uppercase text-nowrap text-lg md:text-xl font-bold ">
-                                  <CountdownTimer
-                                    timeUntilStart={status.timeUntilStart}
-                                    currentTime={currentTime}
-                                    className="leading-4 md:leading-9"
-                                  />
+                                  <span className="inline-flex items-center gap-2">
+                                    Starting in
+                                    <CountdownTimer
+                                      timeUntilStart={status.timeUntilStart}
+                                      currentTime={currentTime}
+                                      className="leading-4 md:leading-9"
+                                    />
+                                  </span>
                                 </div>
                                 <div className="font-header uppercase text-nowrap text-lg md:text-xl font-bold ">
-                                  <CountdownTimer
-                                    timeUntilStart={status.timeUntilStart}
-                                    currentTime={currentTime}
-                                    className="md:leading-10 py-2"
-                                  />
+                                  <span className="inline-flex items-center gap-2">
+                                    Starting in
+                                    <CountdownTimer
+                                      timeUntilStart={status.timeUntilStart}
+                                      currentTime={currentTime}
+                                      className="md:leading-10 py-2"
+                                    />
+                                  </span>
                                 </div>
                               </div>
                             </div>

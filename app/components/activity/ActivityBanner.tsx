@@ -81,11 +81,14 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
                 </>
               ) : status.type === "countdown" ? (
                 <div className="flex flex-col w-full justify-center items-center gap-10 text-white lg:px-4 py-1.5 font-semibold mt-4">
-                  <CountdownTimer
-                    currentTime={currentTime}
-                    timeUntilStart={status.timeUntilStart}
-                    className="text-lg lg:text-xl bg-red-800 rounded-md px-4 py-1"
-                  />
+                  <span className="inline-flex text-lg lg:text-xl bg-red-800 rounded-md px-4 py-1 gap-2">
+                    Starting in
+                    <CountdownTimer
+                      currentTime={currentTime}
+                      timeUntilStart={status.timeUntilStart}
+                    />
+                  </span>
+
                   <InfoCard
                     location={activity.location}
                     date={activity.startDate}

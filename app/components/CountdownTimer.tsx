@@ -41,7 +41,7 @@ export const CountdownTimer = ({
 
   return (
     <div className={className}>
-      {`Starting in ${hours.toString().padStart(2, "0")}:${minutes
+      {`${hours.toString().padStart(2, "0")}:${minutes
         .toString()
         .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`}
     </div>
