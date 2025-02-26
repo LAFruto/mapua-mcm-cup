@@ -21,7 +21,7 @@ const InfoCard = ({
   email,
 }: InfoCardProps) => {
   return (
-    <div className="flex flex-col lg:grid grid-cols-2 gap-8  p-4 rounded-sm">
+    <div className="flex flex-col lg:grid grid-cols-2 gap-8  p-4 rounded-sm text-white">
       {date && timeRange && (
         <div className="flex flex-col gap-2">
           <span className="inline-flex items-center gap-1 text-xs font-medium">
@@ -31,12 +31,15 @@ const InfoCard = ({
           {timeRange}
         </div>
       )}
-      <div className="flex flex-col gap-2">
-        <span className="inline-flex items-center gap-1 text-xs font-medium">
-          <Pin className=" fill-white w-4 h-4 mr-2" /> Location
-        </span>
-        {location}
-      </div>
+      {location && (
+        <div className="flex flex-col gap-2">
+          <span className="inline-flex items-center gap-1 text-xs font-medium">
+            <Pin className=" fill-white w-4 h-4 mr-2" /> Location
+          </span>
+          {location}
+        </div>
+      )}
+
       <div className="flex flex-col gap-2">
         <span className="inline-flex items-center gap-1 text-xs font-medium">
           <User className=" fill-white w-4 h-4 mr-2" /> Event Chair

@@ -51,7 +51,7 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
             <div className="text-white z-20 flex"></div>
           </div>
           <div className="flex flex-col pb-12 gap-6">
-            <div className="w-full h-[200px] relative  overflow-hidden sm:mb-0">
+            <div className="w-full h-[200px] relative overflow-hidden sm:mb-0">
               <Image
                 src={activity.image}
                 height={1024}
@@ -62,8 +62,8 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
             </div>
             <div className="z-20">
               {status.type === "ongoing" ? (
-                <>
-                  <p className="text-lg lg:text-xl bg-red-800 rounded-md px-4 py-1">
+                <div className="flex flex-col w-full justify-center items-center gap-10 text-white lg:px-4 py-1.5 font-semibold mt-4">
+                  <p className="flex items-center justify-center text-lg lg:text-xl bg-red-800  text-white rounded-md px-4 py-1">
                     {status.message}
                   </p>
                   <InfoCard
@@ -74,7 +74,7 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
                     contact={activity.contact || ""}
                     email={activity.email || ""}
                   />
-                </>
+                </div>
               ) : status.type === "countdown" ? (
                 <div className="flex flex-col w-full justify-center items-center gap-10 text-white lg:px-4 py-1.5 font-semibold mt-4">
                   <span className="inline-flex text-lg lg:text-xl bg-red-800 rounded-md px-4 py-1 gap-2">
@@ -96,7 +96,7 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
                 </div>
               ) : status.type === "upcoming" ? (
                 <div className="flex flex-col w-full justify-center items-center gap-2 text-white lg:px-4 py-1.5 font-semibold mt-4">
-                  <p className="text-lg lg:text-xl bg-red-800 rounded-md px-4 py-1">
+                  <p className="text-lg lg:text-xl bg-red-800  rounded-md px-4 py-1">
                     {status.message}
                   </p>
                   <InfoCard
@@ -109,8 +109,8 @@ const ActivityBanner = ({ activity }: ActivityBannerProps) => {
                 </div>
               ) : (
                 <>
-                  <div className="flex items-center justify-center">
-                    <p className="text-lg lg:text-xl bg-red-800 rounded-md px-4 py-1">
+                  <div className="flex flex-col w-full justify-center items-center gap-10 text-white lg:px-4 py-1.5 font-semibold mt-4">
+                    <p className="text-lg lg:text-xl bg-red-800 text-white rounded-md px-4 py-1">
                       {status.message}
                     </p>
                     <InfoCard

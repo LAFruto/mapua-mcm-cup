@@ -70,6 +70,7 @@ const Events = ({ events }: EventsProps) => {
                               />
                             </div>
                           </div>
+                          b{" "}
                         </div>
                       </div>
                     ) : eventStatus.type === "upcoming" ? (
@@ -113,10 +114,10 @@ const Events = ({ events }: EventsProps) => {
                       <div className="h-10 relative z-10 flex items-center justify-between px-2 lg:px-6 lg:pt-0.5 w-full text-white bg-blue-800  md:text-lg truncate text-nowrap font-semibold cursor-pointer group">
                         <div className="h-6 overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className="flex items-center text-nowrap h-8">
+                            <p className="flex items-center text-base  text-white text-nowrap h-6">
                               {eventStatus.message}
                             </p>
-                            <p className="flex items-center text-nowrap h-8">
+                            <p className="flex items-center text-base text-white text-nowrap h-6">
                               {eventStatus.message}
                             </p>
                           </div>

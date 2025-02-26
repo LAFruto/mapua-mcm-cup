@@ -119,7 +119,7 @@ export function getEventStatus(
   const months = [
     "January",
     "February",
-    "March",
+    "March",  
     "April",
     "May",
     "June",
