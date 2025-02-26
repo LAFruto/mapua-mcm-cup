@@ -187,6 +187,13 @@ const Overall = ({ scores }: OverallProps) => {
           </div>
         )}
       </div>
+
+      <div className="flex flex-col gap-2 pt-8">
+        <p className="text-center font-semibold italic">
+          Disclaimer: The scores are not final and may be subject to changes.
+        </p>
+        <p className="text-xs text-center italic">Last Updated: 12:09 PM</p>
+      </div>
     </section>
   );
 };
