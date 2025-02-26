@@ -145,6 +145,7 @@ const FooterBody = ({ events }: { events: ActivityRecord[] }) => {
                 "h-full w-full p-4 lg:py-10 flex lg:items-center lg:justify-center gap-4",
                 index != 2 && "lg:border-r border-white"
               )}
+              key={index}
             >
               <s.icon className="w-6 h-6 lg:h-10 lg:w-10" />
               <Link

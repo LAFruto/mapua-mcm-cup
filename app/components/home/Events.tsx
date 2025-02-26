@@ -80,10 +80,10 @@ const Events = ({ events }: EventsProps) => {
                       >
                         <div className="h-6 overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className="text-blue-800  text-base text-nowrap h-8">
+                            <p className="text-blue-800 text-base text-nowrap h-8">
                               {eventStatus.message}
                             </p>
-                            <p className="text-blue-800  text-base text-nowrap h-8">
+                            <p className="text-blue-800 text-base text-nowrap h-8">
                               {eventStatus.message}
                             </p>
                           </div>
@@ -100,10 +100,10 @@ const Events = ({ events }: EventsProps) => {
                       >
                         <div className="h-6 overflow-hidden mr-2">
                           <div className="transform transition-transform duration-300 ease-in-out group-hover:-translate-y-1/2">
-                            <p className="flex items-center  text-white text-nowrap h-8">
+                            <p className="flex items-center text-base  text-white text-nowrap h-8">
                               {eventStatus.message}
                             </p>
-                            <p className="flex items-center text-white text-nowrap h-8">
+                            <p className="flex items-center text-base text-white text-nowrap h-8">
                               {eventStatus.message}
                             </p>
                           </div>
