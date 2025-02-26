@@ -101,6 +101,7 @@ export async function getLeaderboardById(activity: string) {
                 .select([
                   "ta.rank as rank",
                   "ta.score",
+                  "cl.name",
                   "cl.altName as team",
                   "cl.image",
                   "p.name as participant",
@@ -120,6 +121,7 @@ export async function getLeaderboardById(activity: string) {
           .select([
             "t.rank as rank",
             "t.score",
+            "clu.name",
             "clu.altName as team",
             "clu.image",
             "pa.name as participant",
@@ -128,6 +130,7 @@ export async function getLeaderboardById(activity: string) {
       ).as("scores"),
     ])
     .executeTakeFirst();
+
   if (!leaderboard) return undefined;
 
   let output = undefined;
