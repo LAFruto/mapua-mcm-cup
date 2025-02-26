@@ -192,7 +192,9 @@ const Overall = ({ scores }: OverallProps) => {
         <p className="text-center font-semibold italic">
           Disclaimer: The scores are not final and may be subject to changes.
         </p>
-        <p className="text-xs text-center italic">Last Updated: 2:55 PM</p>
+        <p className="text-xs text-center italic">
+          Last Updated: February 26 - 5:07 PM
+        </p>
       </div>
     </section>
   );
