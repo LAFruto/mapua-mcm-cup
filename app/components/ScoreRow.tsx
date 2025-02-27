@@ -37,9 +37,10 @@ const ScoreRow = ({ score, type = "team" }: ScoreRowProps) => {
             <p className="uppercase text-md lg:text-xl font-bold">
               {score.team}
             </p>
-            <p className="uppercase text-xs font-semibold">{score.name}</p>
 
-            {type == "participant" && (
+            {type == "team" ? (
+              <p className="uppercase text-xs font-semibold">{score.name}</p>
+            ) : (
               <p className="uppercase text-xs font-semibold">
                 {score.participant}
               </p>
