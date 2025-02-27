@@ -6,7 +6,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const getLeaderboardLayout = (teams: Score[]): [Score[], Score[]] => {
+export const getLeaderboardLayout = (
+  teams: Score[]
+): [Score[], Score[], Score[]] => {
   let rankedTeams: Score[] = [];
 
   if (!teams[0].rank) {
@@ -48,7 +50,9 @@ export const getLeaderboardLayout = (teams: Score[]): [Score[], Score[]] => {
 
   const sortedList = [...list].sort((a, b) => b.score! - a.score!);
 
-  return [podium, sortedList];
+  const medalList = [...podium, ...sortedList];
+
+  return [podium, sortedList, medalList];
 };
 
 export const attachRanks = (scores: Score[]): Score[] => {
@@ -119,7 +123,7 @@ export function getEventStatus(
   const months = [
     "January",
     "February",
-    "March",  
+    "March",
     "April",
     "May",
     "June",

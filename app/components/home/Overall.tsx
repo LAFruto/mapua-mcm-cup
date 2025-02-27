@@ -13,21 +13,30 @@ interface OverallProps {
 const ITEMS_PER_PAGE = 8;
 
 const Overall = ({ scores }: OverallProps) => {
-  const [podiumTeams, listTeams] = getLeaderboardLayout(scores);
+  const [podiumTeams, listTeams, medalTeams] = getLeaderboardLayout(scores);
   const [leaderboard, setLeaderboard] = useState<"overall" | "medals">(
     "overall"
   );
   const [currentPage, setCurrentPage] = useState(1);
 
-  const paginatedTeams = useMemo(() => {
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const pageTeams = listTeams.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const getPaginatedItems = <T,>(
+    items: T[],
+    page: number,
+    itemsPerPage: number
+  ) => {
+    const startIndex = (page - 1) * itemsPerPage;
+    const pageItems = items.slice(startIndex, startIndex + itemsPerPage);
+    const emptyInstances = Array(itemsPerPage - pageItems.length).fill(null);
+    return {
+      items: [...pageItems, ...emptyInstances] as (T | null)[],
+      totalPages: Math.ceil(items.length / itemsPerPage),
+    };
+  };
 
-    const emptyInstances = Array(ITEMS_PER_PAGE - pageTeams.length).fill(null);
-    return [...pageTeams, ...emptyInstances];
-  }, [listTeams, currentPage]);
-
-  const totalPages = Math.ceil(listTeams.length / ITEMS_PER_PAGE);
+  const { items: paginatedItems, totalPages } = useMemo(() => {
+    const currentItems = leaderboard === "overall" ? listTeams : medalTeams;
+    return getPaginatedItems(currentItems, currentPage, ITEMS_PER_PAGE);
+  }, [leaderboard, listTeams, medalTeams, currentPage]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -111,11 +120,14 @@ const Overall = ({ scores }: OverallProps) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {paginatedTeams.map((score, index) =>
+                  {paginatedItems.map((score, index) =>
                     score ? (
                       <ScoreRow key={index} score={score} />
                     ) : (
-                      <tr className="border-b border-slate-300 bg-slate-100">
+                      <tr
+                        key={`empty-${index}`}
+                        className="border-b border-slate-300 bg-slate-100"
+                      >
                         <td
                           colSpan={7}
                           className="h-[65px] md:h-[81px] border-b border-gray-200"
@@ -165,11 +177,14 @@ const Overall = ({ scores }: OverallProps) => {
                 </tr>
               </thead>
               <tbody>
-                {[...podiumTeams, ...paginatedTeams].map((score, index) =>
+                {paginatedItems.map((score, index) =>
                   score ? (
                     <MedalRow key={index} score={score} />
                   ) : (
-                    <tr className="border-b border-slate-300 bg-slate-100">
+                    <tr
+                      key={`empty-${index}`}
+                      className="border-b border-slate-300 bg-slate-100"
+                    >
                       <td
                         colSpan={7}
                         className="h-[65px] md:h-[81px] border-b border-gray-200"
