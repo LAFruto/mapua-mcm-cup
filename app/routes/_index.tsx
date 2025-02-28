@@ -60,7 +60,7 @@ export default function Index() {
   return (
     <>
       <Hero activities={[...events]} />
-      <Overall scores={overall} />
+      {/* <Overall scores={overall} /> */}
       <EventCarousel events={events} />
       <Footer events={events} />
     </>
