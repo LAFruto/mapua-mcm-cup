@@ -234,7 +234,7 @@ const activities = [
     location: "Indoor",
     head: "PHILIP CENTENE D. SILOTERIO",
     title: "E-sports Event Chair",
-    email: "erbatenga@mcm.edu.ph",
+    email: "pcdsiloterio@mcm.edu.ph",
     contact: "(0927) 110-2041",
   },
   {
@@ -573,6 +573,12 @@ const teams = [
     altName: "WIS",
     num: 51,
     image: "/teams/wis.png",
+  },
+  {
+    name: "Holy Cross College of Sasa, Inc.",
+    altName: "HCCSI",
+    num: 52,
+    image: "/teams/hccsi.png",
   },
 ];
 
