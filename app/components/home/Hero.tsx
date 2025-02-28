@@ -53,7 +53,7 @@ const Hero = ({ activities }: HeroProps) => {
           </div>
         </div>
       </section>
-      {/* <div className="bg-[url(/hero-bottom.png)] bg-cover bg-center bg-no-repeat h-16"></div> */}
+      <div className="bg-[url(/hero-bottom.png)] bg-cover bg-center bg-no-repeat h-16"></div>
     </>
   );
 };

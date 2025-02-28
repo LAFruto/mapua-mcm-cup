@@ -14,14 +14,14 @@ const Events = ({ events }: EventsProps) => {
 
   return (
     <div className="relative">
-      {/* <div className="relative z-30 bg-[url(/event-header.svg)] bg-cover bg-center bg-no-repeat flex items-center px-[5%] h-72 translate-y-36  md:translate-y-44 overflow-visible">
+      <div className="relative z-30 bg-[url(/event-header.svg)] bg-cover bg-center bg-no-repeat flex items-center px-[5%] h-72 translate-y-36  md:translate-y-44 overflow-visible">
         <p className="font-header text-white text-2xl lg:text-4xl mb-2">
           EVENTS
         </p>
-      </div> */}
+      </div>
       <section
         id="events"
-        className="relative z-10 bg-red-900 w-full padding-container mx-auto py-24 lg:py-24"
+        className="relative z-10 bg-red-900 w-full padding-container mx-auto py-32 lg:py-48"
       >
         <div className="max-container padding-container">
           <div className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
