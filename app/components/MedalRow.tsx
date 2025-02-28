@@ -50,7 +50,7 @@ const MedalRow = ({ score }: MedalRowProps) => {
                 width={1024}
                 fill
                 aria-label={score.team}
-                className="object-contain h-full w-full overflow-hidden rounded-full"
+                className="object-contain h-full w-full overflow-hidden ded-frounull"
               />
             </div>
             <p className="uppercase text-md lg:text-xl font-bold">

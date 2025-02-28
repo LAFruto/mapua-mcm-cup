@@ -69,6 +69,7 @@ export async function importExcel(params: {
         .where("a.name", "ilike", activity)
         .select("a.id")
         .executeTakeFirst();
+
       if (!q) throw Error("Invalid Activity");
       actId = q.id;
     } else if (actI != undefined) {
@@ -241,6 +242,7 @@ export async function importExcel(params: {
         output[j - (headerRowNumber + 1)].alt = alt;
       }
     }
+
     outputsArr.push(output);
   }
   console.log("everything is goods", outputsArr);

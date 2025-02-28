@@ -56,7 +56,12 @@ const ActivityLeaderboard = ({ category, type }: ActivityLeaderboardProps) => {
           <tbody>
             {paginatedTeams.map((score, index) =>
               score ? (
-                <ScoreRow key={index} score={score} type={type} />
+                <ScoreRow
+                  key={index}
+                  score={score}
+                  type={type}
+                  category={category.category || null}
+                />
               ) : (
                 <tr className="border-b border-slate-300 bg-slate-100">
                   <td

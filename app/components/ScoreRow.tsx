@@ -1,13 +1,15 @@
 import { cn, getListColor } from "~/lib/util";
 import { Score, ScoreType } from "~/types";
 import { Image } from "./Image";
+import { string } from "zod";
 
 interface ScoreRowProps {
   score: Score;
   type?: ScoreType;
+  category?: string | null;
 }
 
-const ScoreRow = ({ score, type = "team" }: ScoreRowProps) => {
+const ScoreRow = ({ score, type = "team", category }: ScoreRowProps) => {
   return (
     <tr className="border-b border-slate-300 bg-slate-100">
       <td className="items-center justify-center h-full px-4 md:px-6 py-2">
@@ -49,9 +51,13 @@ const ScoreRow = ({ score, type = "team" }: ScoreRowProps) => {
         </div>
       </td>
       <td className="px-6 py-2 text-right">
-        <p className="bg-white text-lg md:text-xl px-4 tracking-wider font-bold inline-block">
-          {score.score}
-        </p>
+        {(type === "team" ||
+          category === "Smart Talking" ||
+          category === "Interviewing") && (
+          <p className="bg-white text-lg md:text-xl px-4 tracking-wider font-bold inline-block">
+            {score.score}
+          </p>
+        )}
       </td>
     </tr>
   );
